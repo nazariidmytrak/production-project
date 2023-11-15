@@ -30,9 +30,12 @@ module.exports = {
     'import/extensions': 'off',
     'import/no-extraneous-dependencies': 'off',
     'no-underscore-dangle': 'off',
-    'i18next/no-literal-string': 'off' /*  ['error', { markupOnly: true }] */,
+    'i18next/no-literal-string': 'off' /* ['error', { markupOnly: true }] */,
     'comma-dangle': 'off',
     'max-len': ['error', { code: 100, ignoreComments: true }], // 80 better,
+    'react/jsx-wrap-multilines': 'off',
+    quotes: ['error', 'single'],
+    'jsx-quotes': ['error', 'prefer-single'],
   },
   globals: {
     __IS_DEV__: true,
