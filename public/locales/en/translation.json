@@ -1,9 +1,9 @@
 {
   "Language": "English",
+  "LanguageAbbreviation": "EN",
   "Page not found": "Page not found",
   "Unexpected error occurred": "Unexpected error occurred",
   "Refresh the page": "Refresh the page",
   "About us": "About us",
-  "Main": "Main",
-  "Toggle": "Toggle"
+  "Main": "Main"
 }

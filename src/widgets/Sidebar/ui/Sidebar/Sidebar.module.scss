@@ -6,14 +6,10 @@
   transition: width 0.3s ease;
 }
 
-.collapsed {
-  width: var(--sidebar-width-collapsed);
-}
-
 .switchers {
   display: flex;
   justify-content: center;
-  column-gap: 15px;
+  gap: 10px;
   width: 100%;
   position: absolute;
   bottom: 20px;
@@ -21,4 +17,45 @@
 
 .theme {
   display: inline-flex;
+}
+
+.collapseBtn {
+  position: absolute;
+  right: -32px;
+  bottom: 32px;
+}
+
+.items {
+  display: grid;
+  gap: 10px;
+  margin: 20px 0 0 30px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.link {
+  opacity: 1;
+}
+
+.icon {
+  fill: var(--inverted-primary-color);
+}
+
+.collapsed {
+  width: var(--sidebar-width-collapsed);
+
+  .switchers {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .link {
+    width: 0;
+    opacity: 0;
+    transition: 0.2s all ease-out;
+  }
 }
