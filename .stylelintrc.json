@@ -4,6 +4,13 @@
     "indentation": 2,
     "selector-class-pattern": null,
     "string-quotes": "single",
-    "custom-property-empty-line-before": null
+    "custom-property-empty-line-before": null,
+    "no-eol-whitespace": [
+      true,
+      {
+        "ignore": ["empty-lines"]
+      }
+    ],
+    "declaration-empty-line-before": null
   }
 }

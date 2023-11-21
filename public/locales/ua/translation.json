@@ -5,5 +5,7 @@
   "Unexpected error occurred": "Сталася непередбачувана помилка",
   "Refresh the page": "Обновити сторінку",
   "About us": "Про нас",
-  "Main": "Головна"
+  "Main": "Головна",
+  "Login": "Увійти",
+  "Lorem": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
 }
