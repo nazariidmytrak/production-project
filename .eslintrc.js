@@ -51,6 +51,7 @@ module.exports = {
     'react-hooks/exhaustive-deps': 'error',
     'arrow-body-style': ['warn', 'as-needed'],
     'implicit-arrow-linebreak': ['warn', 'beside'],
+    'no-param-reassign': 'off',
   },
   globals: {
     __IS_DEV__: true,

@@ -7,5 +7,7 @@
   "About us": "About us",
   "Main": "Main",
   "Login": "Login",
-  "Lorem": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+  "Lorem": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+  "Increment": "Increment",
+  "Decrement": "Decrement"
 }
