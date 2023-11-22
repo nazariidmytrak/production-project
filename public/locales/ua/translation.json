@@ -9,5 +9,7 @@
   "Login": "Увійти",
   "Lorem": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
   "Increment": "Збільшити",
-  "Decrement": "Зменшити"
+  "Decrement": "Зменшити",
+  "Password": "Введіть пароль",
+  "Username": "Введіть username"
 }
