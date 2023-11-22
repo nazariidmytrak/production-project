@@ -7,9 +7,12 @@
   "About us": "About us",
   "Main": "Main",
   "Login": "Login",
+  "Logout": "Logout",
   "Lorem": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
   "Increment": "Increment",
   "Decrement": "Decrement",
   "Password": "Enter password",
-  "Username": "Enter username"
+  "Username": "Enter username",
+  "Login form": "Login form",
+  "Invalid credentials": "Invalid credentials"
 }

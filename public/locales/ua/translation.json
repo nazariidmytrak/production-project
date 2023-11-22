@@ -7,9 +7,12 @@
   "About us": "Про нас",
   "Main": "Головна",
   "Login": "Увійти",
+  "Logout": "Вийти",
   "Lorem": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
   "Increment": "Збільшити",
   "Decrement": "Зменшити",
   "Password": "Введіть пароль",
-  "Username": "Введіть username"
+  "Username": "Введіть ім'я",
+  "Login form": "Форма авторизації",
+  "Invalid credentials": "Невірні дані"
 }
