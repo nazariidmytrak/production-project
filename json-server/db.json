@@ -25,5 +25,14 @@
       "password": "123"
     }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "firstname": "Nazarii",
+    "lastname": "Dmytrak",
+    "age": 24,
+    "currency": "UAH",
+    "country": "Ukraine",
+    "city": "IF",
+    "username": "admin",
+    "avatar": "https://i.pravatar.cc/150?img=6"
+  }
 }

@@ -31,31 +31,11 @@
   margin: 20px 0 0 30px;
 }
 
-.item {
-  display: flex;
-  align-items: center;
-  column-gap: 10px;
-}
-
-.link {
-  opacity: 1;
-}
-
-.icon {
-  fill: var(--inverted-primary-color);
-}
-
 .collapsed {
   width: var(--sidebar-width-collapsed);
 
   .switchers {
     flex-direction: column;
     align-items: center;
-  }
-
-  .link {
-    width: 0;
-    opacity: 0;
-    transition: 0.2s all ease-out;
   }
 }
