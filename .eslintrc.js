@@ -53,6 +53,7 @@ module.exports = {
     'arrow-body-style': ['warn', 'as-needed'],
     'implicit-arrow-linebreak': ['warn', 'beside'],
     'no-param-reassign': 'off',
+    'no-undef': 'off',
   },
   globals: {
     __IS_DEV__: true,
