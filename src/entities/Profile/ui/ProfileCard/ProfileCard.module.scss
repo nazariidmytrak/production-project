@@ -5,15 +5,23 @@
   gap: 20px;
 }
 
-.header {
-  display: flex;
-}
-
-.editBtn {
-  margin-left: auto;
-}
-
 .data {
   display: grid;
   gap: 10px;
+}
+
+.loading,
+.error {
+  display: grid;
+  place-items: center;
+  height: 300px;
+}
+
+.avatarWrapper {
+  display: grid;
+  place-items: center;
+}
+
+.editing {
+  border: 2px solid var(--inverted-primary-color);
 }
