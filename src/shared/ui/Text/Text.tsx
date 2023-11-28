@@ -28,7 +28,7 @@ export const Text = memo(
     text,
     title,
     theme = TextTheme.PRIMARY,
-    align = TextAlign.RIGHT,
+    align = TextAlign.LEFT,
   }: TextProps) => (
     <div
       className={classNames(cls.Text, {}, [className, cls[theme], cls[align]])}

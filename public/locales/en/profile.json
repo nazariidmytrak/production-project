@@ -1,6 +1,7 @@
 {
   "Profile": "Profile",
   "Edit": "Edit",
+
   "FirstName": "Your name",
   "LastName": "Your last name",
   "Age": "Your age",
@@ -9,8 +10,15 @@
   "Avatar": "Avatar link",
   "Country": "Country",
   "Currency": "Currency",
-  "Error": "An error occurred while loading the profile",
-  "Refresh": "Try refreshing the page",
+  
+  "An error occurred while loading the profile": "An error occurred while loading the profile",
+  "Try refreshing the page": "Try refreshing the page",
   "Cancel": "Cancel",
-  "Save": "Save"
+  "Save": "Save",
+
+  "Incorrect_user_data": "First and last name are required",
+  "Incorrect_age": "Incorrect age",
+  "No_data": "The form does not contain any data",
+  "Incorrect_country": "Incorrect country",
+  "Server_error" : "Іerver error when saving data"
 }

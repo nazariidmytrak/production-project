@@ -59,8 +59,8 @@ export const ProfileCard = ({
       <div className={classNames(cls.ProfileCard, {}, [className, cls.error])}>
         <Text
           theme={TextTheme.ERROR}
-          title={t('Error')}
-          text={t('Refresh')}
+          title={t('An error occurred while loading the profile')}
+          text={t('Try refreshing the page')}
           align={TextAlign.CENTER}
         />
       </div>
