@@ -16,5 +16,7 @@
   "Password": "Enter password",
   "Username": "Enter username",
   "Login form": "Login form",
-  "Invalid credentials": "Invalid credentials"
+  "Invalid credentials": "Invalid credentials",
+  "Write a comment": "Write a comment",
+  "Send": "Send"
 }

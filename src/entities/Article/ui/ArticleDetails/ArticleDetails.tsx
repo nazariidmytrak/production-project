@@ -12,6 +12,7 @@ import { Text, TextAlign, TextSize } from 'shared/ui/Text/Text';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Icon } from 'shared/ui/Icon/Icon';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import EyeIcon from 'shared/assets/icons/eye-20-20.svg';
 import CalendarIcon from 'shared/assets/icons/calendar-20-20.svg';
 
@@ -59,12 +60,16 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
     }
   }, []);
 
-  useEffect(() => {
+  useInitialEffect(() => {
+    dispatch(fetchArticleById(id));
+  });
+
+  /* useEffect(() => {
     if (__PROJECT__ !== 'storybook') {
       dispatch(fetchArticleById(id));
     }
   }, [dispatch, id]);
-
+ */
   let content;
 
   if (isLoading) {
@@ -112,7 +117,7 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
   }
 
   return (
-    <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
+    <DynamicModuleLoader reducers={reducers}>
       <div className={classNames(cls.ArticleDetails, {}, [className])}>
         {content}
       </div>
