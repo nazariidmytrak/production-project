@@ -120,6 +120,12 @@
       "userId": "2",
       "text": "some comment 6",
       "id": "wT0NwtO"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "some comment 7",
+      "id": "lA3fkSw"
     }
   ],
   "users": [
