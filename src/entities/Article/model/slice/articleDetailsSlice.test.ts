@@ -9,6 +9,11 @@ import { articleDetailsReducer } from './articleDetailsSlice';
 
 const data = {
   id: '1',
+  user: {
+    id: '1',
+    username: 'Nazarii',
+    avatar: 'https://i.pravatar.cc/150?img=6',
+  },
   title: 'Test title',
   subtitle: 'Test subtitle',
   img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
