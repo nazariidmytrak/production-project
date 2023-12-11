@@ -8,6 +8,7 @@ import {
 import { To, NavigateOptions } from 'react-router-dom';
 import { AxiosInstance } from 'axios';
 
+import { ArticlesPageSchema } from 'pages/ArticlesPage';
 import { ArticlesDetailsCommentsSchema } from 'pages/ArticleDetailsPage';
 import { LoginSchema } from 'features/AuthByUsername';
 import { AddCommentFormSchema } from 'features/addCommentForm';
@@ -26,6 +27,7 @@ export interface StateSchema {
   articleDetails?: ArticleDetailsSchema;
   articleDetailsComments?: ArticlesDetailsCommentsSchema;
   addCommentForm?: AddCommentFormSchema;
+  articlesPage?: ArticlesPageSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;

@@ -14,13 +14,11 @@ interface ArticleListProps {
   view: ArticleView;
 }
 
-const getSkeletons = (view: ArticleView) => {
-  return new Array(view === ArticleView.SMALL ? 9 : 3)
-    .fill(0)
-    .map((item, index) => (
-      <ArticleListItemSkeleton className={cls.card} key={index} view={view} />
-    ));
-};
+const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.SMALL ? 9 : 3)
+  .fill(0)
+  .map((item, index) => (
+    <ArticleListItemSkeleton className={cls.card} key={index} view={view} />
+  ));
 
 export const ArticleList = memo(
   ({
@@ -41,16 +39,14 @@ export const ArticleList = memo(
       );
     }
 
-    const renderArticle = (article: Article) => {
-      return (
-        <ArticleListItem
-          key={article.id}
-          className={cls.card}
-          article={article}
-          view={view}
-        />
-      );
-    };
+    const renderArticle = (article: Article) => (
+      <ArticleListItem
+        key={article.id}
+        className={cls.card}
+        article={article}
+        view={view}
+      />
+    );
 
     return (
       <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
