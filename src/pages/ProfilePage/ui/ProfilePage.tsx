@@ -19,6 +19,7 @@ import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
 
 import { classNames } from 'shared/lib/classNames/classNames';
+import { Page } from 'shared/ui/Page/Page';
 import {
   DynamicModuleLoader,
   ReducersList,
@@ -123,7 +124,7 @@ const ProfilePage = memo(({ className }: ProfilePageProps) => {
 
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <div className={classNames(cls.ProfilePage, {}, [className])}>
+      <Page className={classNames(cls.ProfilePage, {}, [className])}>
         <ProfilePageHeader />
         {validateErrors?.length
           && validateErrors.map((error) => (
@@ -147,7 +148,7 @@ const ProfilePage = memo(({ className }: ProfilePageProps) => {
           onChangeCurrency={onChangeCurrency}
           onChangeCountry={onChangeCountry}
         />
-      </div>
+      </Page>
     </DynamicModuleLoader>
   );
 });

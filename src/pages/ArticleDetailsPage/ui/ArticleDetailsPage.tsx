@@ -16,6 +16,7 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEf
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Button } from 'shared/ui/Button/Button';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { Page } from 'shared/ui/Page/Page';
 
 import {
   articleDetailsCommentsReducer,
@@ -60,21 +61,23 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
 
   if (!id) {
     return (
-      <div className={classNames('', {}, [className])}>
+      <Page className={classNames('', {}, [className])}>
         {t('Article not found')}
-      </div>
+      </Page>
     );
   }
 
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <div className={classNames(cls.ArticlesDetailsPage, {}, [className])}>
-        <Button className={cls.backBtn} onClick={onBackToList}>{t('Back to list')}</Button>
+      <Page className={classNames(cls.ArticlesDetailsPage, {}, [className])}>
+        <Button className={cls.backBtn} onClick={onBackToList}>
+          {t('Back to list')}
+        </Button>
         <ArticleDetails id={id} />
         <Text title={t('Comments')} />
         <AddCommentForm onSendComment={onSendComment} />
         <CommentList isLoading={commentsIsLoading} comments={comments} />
-      </div>
+      </Page>
     </DynamicModuleLoader>
   );
 };
