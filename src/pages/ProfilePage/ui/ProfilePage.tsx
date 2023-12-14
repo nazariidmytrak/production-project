@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
 
+import { Page } from 'widgets/Page';
 import {
   ProfileCard,
   ValidateProfileError,
@@ -17,9 +18,7 @@ import {
 } from 'entities/Profile';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
-
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Page } from 'shared/ui/Page/Page';
 import {
   DynamicModuleLoader,
   ReducersList,

@@ -5,13 +5,14 @@ import {
   Reducer,
   ReducersMapObject,
 } from '@reduxjs/toolkit';
-import { To, NavigateOptions } from 'react-router-dom';
+
 import { AxiosInstance } from 'axios';
 
 import { ArticlesPageSchema } from 'pages/ArticlesPage';
 import { ArticlesDetailsCommentsSchema } from 'pages/ArticleDetailsPage';
 import { LoginSchema } from 'features/AuthByUsername';
 import { AddCommentFormSchema } from 'features/addCommentForm';
+import { UISchema } from 'features/UI';
 import { CounterSchema } from 'entities/Counter';
 import { ProfileSchema } from 'entities/Profile';
 import { UserSchema } from 'entities/User';
@@ -20,6 +21,7 @@ import { ArticleDetailsSchema } from 'entities/Article';
 export interface StateSchema {
   counter: CounterSchema;
   user: UserSchema;
+  ui: UISchema;
 
   // Async reducers
   loginForm?: LoginSchema;
