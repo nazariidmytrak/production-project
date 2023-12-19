@@ -2,5 +2,18 @@
   "Article not found": "Article not found",
   "Comments": "Comments",
   "No comment": "No comments yet. Be the first to share your thoughts!",
-  "Back to list": "Back to list"
+  "Back to list": "Back to list",
+  "Sort by": "Sort by",
+  "Date of creation": "Date of creation",
+  "Title": "Title",
+  "Views": "Views",
+  "Order": "Order",
+  "Ascending": "Ascending",
+  "Descending": "Descending",
+  "Search": "Search",
+  "Articles not found": "Articles not found",
+  "All": "All",
+  "IT": "IT",
+  "Economics": "Economics",
+  "Science": "Science"
 }
