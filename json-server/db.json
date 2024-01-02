@@ -588,7 +588,7 @@
     {
       "id": "2",
       "username": "user",
-      "password": "123 ",
+      "password": "123",
       "role": "USER",
       "avatar": "https://eu.ui-avatars.com/api/?name=John+Doe&size=250"
     }

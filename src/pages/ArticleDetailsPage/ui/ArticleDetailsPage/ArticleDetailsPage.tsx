@@ -1,6 +1,6 @@
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 import { Page } from 'widgets/Page';
@@ -15,20 +15,21 @@ import {
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Button } from 'shared/ui/Button/Button';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 
-import { getArticleComments } from '../model/slices/articleDetailsCommentsSlice';
+import { getArticleComments } from '../../model/slices/articleDetailsCommentsSlice';
 import cls from './ArticlesDetailsPage.module.scss';
-import { getArticleCommentsIsLoading } from '../model/selectors/comments';
+import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
 // eslint-disable-next-line
-import { fetchCommentsByArticleId } from '../model/services/fetchCommentByArticleId/fetchCommentByArticleId';
-import { addCommentForArticle } from '../model/services/addCommentForArticle/addCommentForArticle';
-import { getArticleRecommendations } from '../model/slices/articleDetailsPageRecommendationsSlice';
-import { getArticleRecommendationsIsLoading } from '../model/selectors/recommendations';
+import { fetchCommentsByArticleId } from '../../model/services/fetchCommentByArticleId/fetchCommentByArticleId';
 // eslint-disable-next-line
-import { fetchArticleRecommendations } from '../model/services/fetchArticleRecommendations/fetchArticleRecommendations';
-import { articleDetailsPageReducer } from '../model/slices';
+import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
+// eslint-disable-next-line
+import { getArticleRecommendations } from '../../model/slices/articleDetailsPageRecommendationsSlice';
+import { getArticleRecommendationsIsLoading } from '../../model/selectors/recommendations';
+// eslint-disable-next-line
+import { fetchArticleRecommendations } from '../../model/services/fetchArticleRecommendations/fetchArticleRecommendations';
+import { articleDetailsPageReducer } from '../../model/slices';
+import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -41,7 +42,7 @@ const reducers: ReducersList = {
 const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
   const { t } = useTranslation('article-details');
   const { id } = useParams<{ id: string }>();
-  const navigate = useNavigate();
+
   const dispatch = useAppDispatch();
   const comments = useSelector(getArticleComments.selectAll);
   const recommendations = useSelector(getArticleRecommendations.selectAll);
@@ -62,10 +63,6 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
     [dispatch]
   );
 
-  const onBackToList = useCallback(() => {
-    navigate(RoutePath.articles);
-  }, [navigate]);
-
   if (!id) {
     return (
       <Page className={classNames('', {}, [className])}>
@@ -77,9 +74,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
   return (
     <DynamicModuleLoader reducers={reducers}>
       <Page className={classNames(cls.ArticlesDetailsPage, {}, [className])}>
-        <Button className={cls.backBtn} onClick={onBackToList}>
-          {t('Back to list')}
-        </Button>
+        <ArticleDetailsPageHeader />
         <ArticleDetails id={id} />
         <Text size={TextSize.L} title={t('Recommended')} />
         <ArticleList
