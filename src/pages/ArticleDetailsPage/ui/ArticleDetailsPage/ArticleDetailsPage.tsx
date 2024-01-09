@@ -9,6 +9,7 @@ import { CommentList } from 'entities/Comment';
 import { ArticleDetails, ArticleList } from 'entities/Article';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Text, TextSize } from 'shared/ui/Text/Text';
+import { VStack } from 'shared/ui/Stack';
 import {
   DynamicModuleLoader,
   ReducersList,
@@ -74,17 +75,19 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
   return (
     <DynamicModuleLoader reducers={reducers}>
       <Page className={classNames(cls.ArticlesDetailsPage, {}, [className])}>
-        <ArticleDetailsPageHeader />
-        <ArticleDetails id={id} />
-        <Text size={TextSize.L} title={t('Recommended')} />
-        <ArticleList
-          articles={recommendations}
-          isLoading={recommendationsIsLoading}
-          target='_blank'
-        />
-        <Text size={TextSize.L} title={t('Comments')} />
-        <AddCommentForm onSendComment={onSendComment} />
-        <CommentList isLoading={commentsIsLoading} comments={comments} />
+        <VStack gap='16' max>
+          <ArticleDetailsPageHeader />
+          <ArticleDetails id={id} />
+          <Text size={TextSize.L} title={t('Recommended')} />
+          <ArticleList
+            articles={recommendations}
+            isLoading={recommendationsIsLoading}
+            target='_blank'
+          />
+          <Text size={TextSize.L} title={t('Comments')} />
+          <AddCommentForm onSendComment={onSendComment} />
+          <CommentList isLoading={commentsIsLoading} comments={comments} />
+        </VStack>
       </Page>
     </DynamicModuleLoader>
   );

@@ -1,11 +1,11 @@
-import { memo, useCallback, useMemo } from 'react';
+import { memo, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { ArticleSortField } from 'entities/Article';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Select, SelectOption } from 'shared/ui/Select/Select';
+import { HStack } from 'shared/ui/Stack';
 import { SortOrder } from 'shared/types';
-import cls from './ArticleSortSelector.module.scss';
 
 interface ArticleSortSelectorProps {
   className?: string;
@@ -58,7 +58,7 @@ export const ArticleSortSelector = memo(
     );
 
     return (
-      <div className={classNames(cls.ArticleSortSelector, {}, [className])}>
+      <HStack gap='16' className={classNames('', {}, [className])}>
         <Select
           options={sortFieldOptions}
           label={t('Sort by')}
@@ -71,7 +71,7 @@ export const ArticleSortSelector = memo(
           value={order}
           onChange={onChangeOrder}
         />
-      </div>
+      </HStack>
     );
   }
 );

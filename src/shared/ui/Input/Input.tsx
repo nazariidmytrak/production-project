@@ -8,6 +8,7 @@ import {
 } from 'react';
 
 import { Mods, classNames } from 'shared/lib/classNames/classNames';
+import { HStack } from 'shared/ui/Stack';
 import cls from './Input.module.scss';
 
 type HTMLInputProps = Omit<
@@ -69,7 +70,7 @@ export const Input = memo(
     };
 
     return (
-      <div className={classNames(cls.InputWrapper, mods, [className])}>
+      <HStack gap='4' className={classNames('', mods, [className])}>
         {placeholder && (
           <div className={cls.placeholder}>{`${placeholder}>`}</div>
         )}
@@ -93,7 +94,7 @@ export const Input = memo(
             />
           )}
         </div>
-      </div>
+      </HStack>
     );
   }
 );

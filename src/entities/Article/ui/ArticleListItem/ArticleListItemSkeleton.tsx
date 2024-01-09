@@ -3,6 +3,7 @@ import { memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Card } from 'shared/ui/Card/Card';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
+import { HStack, VStack } from 'shared/ui/Stack';
 
 import { ArticleView } from '../../model/types/article';
 import cls from './ArticleListItem.module.scss';
@@ -18,25 +19,28 @@ export const ArticleListItemSkeleton = memo(
 
     if (view === ArticleView.BIG) {
       return (
-        <div
+        <VStack
+          max
           className={classNames(cls.ArticleListItem, {}, [
             className,
             cls[view],
           ])}
         >
           <Card className={cls.card}>
-            <div className={cls.header}>
-              <Skeleton border='50%' height={30} width={30} />
-              <Skeleton width={150} height={16} className={cls.username} />
-              <Skeleton width={150} height={16} className={cls.date} />
-            </div>
-            <Skeleton width={250} height={24} className={cls.title} />
-            <Skeleton height={200} className={cls.img} />
-            <div className={cls.footer}>
-              <Skeleton height={36} width={200} />
-            </div>
+            <VStack gap='16'>
+              <HStack gap='16' max>
+                <Skeleton border='50%' height={30} width={30} />
+                <Skeleton width={150} height={16} className={cls.username} />
+                <Skeleton width={150} height={16} className={cls.date} />
+              </HStack>
+              <Skeleton width={250} height={24} className={cls.title} />
+              <Skeleton height={200} className={cls.img} />
+              <div>
+                <Skeleton height={36} width={200} />
+              </div>
+            </VStack>
           </Card>
-        </div>
+        </VStack>
       );
     }
 
@@ -45,13 +49,15 @@ export const ArticleListItemSkeleton = memo(
         className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
       >
         <Card className={cls.card}>
-          <div className={cls.imageWrapper}>
-            <Skeleton width={200} height={200} className={cls.img} />
-          </div>
-          <div className={cls.infoWrapper}>
-            <Skeleton width={130} height={16} />
-          </div>
-          <Skeleton width={150} height={16} className={cls.title} />
+          <VStack gap='16'>
+            <div className={cls.imageWrapper}>
+              <Skeleton width={200} height={200} className={cls.img} />
+            </div>
+            <div className={cls.infoWrapper}>
+              <Skeleton width={130} height={16} />
+            </div>
+            <Skeleton width={150} height={16} className={cls.title} />
+          </VStack>
         </Card>
       </div>
     );

@@ -3,6 +3,7 @@ import { memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { Icon } from 'shared/ui/Icon/Icon';
+import { HStack } from 'shared/ui/Stack';
 import ListIcon from 'shared/assets/icons/list-24-24.svg';
 import TiledIcon from 'shared/assets/icons/tiled-24-24.svg';
 import { ArticleView } from '../../model/types/article';
@@ -32,7 +33,10 @@ export const ArticleViewSelector = memo(
     };
 
     return (
-      <div className={classNames(cls.ArticleViewSelector, {}, [className])}>
+      <HStack
+        gap='4'
+        className={classNames(cls.ArticleViewSelector, {}, [className])}
+      >
         {viewTypes.map((viewType) => (
           <Button
             key={viewType.view}
@@ -49,7 +53,7 @@ export const ArticleViewSelector = memo(
             />
           </Button>
         ))}
-      </div>
+      </HStack>
     );
   }
 );

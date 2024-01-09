@@ -1,5 +1,12 @@
 .Tabs {
-  display: flex;
-  gap: 8px;
   cursor: pointer;
+
+  & div {
+    transition: all 0.3s;
+    
+    &:hover {
+      border-color: var(--inverted-bg-color);
+      color: var(--inverted-bg-color);
+    }
+  }
 }

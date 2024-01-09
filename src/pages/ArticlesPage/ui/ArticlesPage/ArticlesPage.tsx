@@ -12,7 +12,7 @@ import {
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-
+import { VStack } from 'shared/ui/Stack';
 import {
   articlesPageReducer,
   getArticles,
@@ -59,13 +59,10 @@ const ArticlesPage = memo(({ className }: ArticlesPageProps) => {
         className={classNames(cls.ArticlesPage, {}, [className])}
         onScrollEnd={onLoadNextPart}
       >
-        <ArticlesPageFilters />
-        <ArticleList
-          className={cls.list}
-          isLoading={isLoading}
-          view={view}
-          articles={articles}
-        />
+        <VStack gap='32' max>
+          <ArticlesPageFilters />
+          <ArticleList isLoading={isLoading} view={view} articles={articles} />
+        </VStack>
       </Page>
     </DynamicModuleLoader>
   );

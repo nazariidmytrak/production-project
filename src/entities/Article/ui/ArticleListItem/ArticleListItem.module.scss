@@ -1,39 +1,15 @@
 .BIG {
-  .header {
-    display: flex;
-    align-items: center;
-  }
-
-  .username {
-    margin-left: 8px;
-  }
-
-  .date {
-    margin-left: auto;
+  .card {
+    width: 100%;
   }
 
   .img {
     width: 100%;
     max-height: 250px;
     object-fit: cover;
-    margin: 16px 0;
-  }
-
-  .title {
-    margin-top: 8px;
-  }
-
-  .views {
-    margin-left: auto;
-  }
-
-  .footer {
-    display: flex;
-    align-items: center;
   }
 
   .textBlock {
-    margin-top: 16px;
     max-height: 190px;
     overflow-y: hidden;
   }
@@ -72,12 +48,6 @@
     }
   }
 
-  .infoWrapper {
-    display: flex;
-    align-items: center;
-    margin-top: 8px;
-  }
-
   .types {
     p {
       width: 115px;
@@ -93,8 +63,6 @@
   }
 
   .title {
-    margin-top: 8px;
-
     p {
       width: 200px;
       white-space: nowrap;

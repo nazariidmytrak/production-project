@@ -1,25 +1,11 @@
 .ProfileCard {
   padding: 20px;
   border: 2px solid var(--inverted-bg-color);
-  display: grid;
-  gap: 20px;
-}
-
-.data {
-  display: grid;
-  gap: 10px;
 }
 
 .loading,
 .error {
-  display: grid;
-  place-items: center;
   height: 300px;
-}
-
-.avatarWrapper {
-  display: grid;
-  place-items: center;
 }
 
 .editing {

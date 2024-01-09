@@ -14,8 +14,8 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Card } from 'shared/ui/Card/Card';
 import { Input } from 'shared/ui/Input/Input';
+import { HStack, VStack } from 'shared/ui/Stack';
 import { SortOrder } from 'shared/types';
-import { TabItem, Tabs } from 'shared/ui/Tabs/Tabs';
 import { useDebounce } from 'shared/lib/hooks/useDebounce/useDebounce';
 import {
   getArticlesPageOrder,
@@ -92,8 +92,8 @@ export const ArticlesPageFilters = memo(
     );
 
     return (
-      <div className={classNames(cls.ArticlesPageFilters, {}, [className])}>
-        <div className={cls.sortWrapper}>
+      <VStack gap='16' max className={classNames('', {}, [className])}>
+        <HStack justify='between' max>
           <ArticleSortSelector
             order={order}
             sort={sort}
@@ -101,8 +101,8 @@ export const ArticlesPageFilters = memo(
             onChangeSort={onChangeSort}
           />
           <ArticleViewSelector view={view} onViewClick={onChangeView} />
-        </div>
-        <Card>
+        </HStack>
+        <Card className={cls.search}>
           <Input
             onChange={onChangeSearch}
             value={search}
@@ -110,7 +110,7 @@ export const ArticlesPageFilters = memo(
           />
         </Card>
         <ArticleTypeTabs value={type} onChangeType={onChangeType} />
-      </div>
+      </VStack>
     );
   }
 );

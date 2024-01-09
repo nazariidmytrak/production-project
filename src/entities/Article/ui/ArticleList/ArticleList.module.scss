@@ -1,11 +1,14 @@
+.BIG,
+.SMALL {
+  display: flex;
+  gap: 30px;
+}
+
 .BIG {
-  .card {
-    margin-bottom: 30px;
-  }
+  flex-direction: column;
+  width: 100%;
 }
 
 .SMALL {
-  display: flex;
   flex-wrap: wrap;
-  gap: 30px;
 }
