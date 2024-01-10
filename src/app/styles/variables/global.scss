@@ -2,6 +2,11 @@
   // Fonts
   --font-family-main: consolas, 'Times New Roman', serif;
 
+  // S-font
+  --font-size-s: 12px;
+  --font-line-s: 20px;
+  --font-s: var(--font-size-s) / var(--font-line-s) var(--font-family-main);
+
   // M-font
   --font-size-m: 16px;
   --font-line-m: 24px;
