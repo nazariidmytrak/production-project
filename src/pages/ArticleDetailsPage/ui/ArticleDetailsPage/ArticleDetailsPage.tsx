@@ -4,9 +4,10 @@ import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 import { Page } from 'widgets/Page';
+import { ArticleRecommendationsList } from 'features/articleRecommendationsList';
 import { AddCommentForm } from 'features/addCommentForm';
 import { CommentList } from 'entities/Comment';
-import { ArticleDetails, ArticleList } from 'entities/Article';
+import { ArticleDetails } from 'entities/Article';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Text, TextSize } from 'shared/ui/Text/Text';
 import { VStack } from 'shared/ui/Stack';
@@ -24,11 +25,6 @@ import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentByArticleId/fetchCommentByArticleId';
 // eslint-disable-next-line
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
-// eslint-disable-next-line
-import { getArticleRecommendations } from '../../model/slices/articleDetailsPageRecommendationsSlice';
-import { getArticleRecommendationsIsLoading } from '../../model/selectors/recommendations';
-// eslint-disable-next-line
-import { fetchArticleRecommendations } from '../../model/services/fetchArticleRecommendations/fetchArticleRecommendations';
 import { articleDetailsPageReducer } from '../../model/slices';
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 
@@ -46,15 +42,10 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
 
   const dispatch = useAppDispatch();
   const comments = useSelector(getArticleComments.selectAll);
-  const recommendations = useSelector(getArticleRecommendations.selectAll);
   const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
-  const recommendationsIsLoading = useSelector(
-    getArticleRecommendationsIsLoading
-  );
 
   useInitialEffect(() => {
     dispatch(fetchCommentsByArticleId(id));
-    dispatch(fetchArticleRecommendations());
   });
 
   const onSendComment = useCallback(
@@ -78,12 +69,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
         <VStack gap='16' max>
           <ArticleDetailsPageHeader />
           <ArticleDetails id={id} />
-          <Text size={TextSize.L} title={t('Recommended')} />
-          <ArticleList
-            articles={recommendations}
-            isLoading={recommendationsIsLoading}
-            target='_blank'
-          />
+          <ArticleRecommendationsList />
           <Text size={TextSize.L} title={t('Comments')} />
           <AddCommentForm onSendComment={onSendComment} />
           <CommentList isLoading={commentsIsLoading} comments={comments} />

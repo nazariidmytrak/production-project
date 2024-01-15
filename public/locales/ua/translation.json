@@ -20,5 +20,7 @@
   "Write a comment": "Написати коментар",
   "Send": "Відправити",
   "Read more": "Читати далі...",
-  "Create article": "Створити статтю"
+  "Create article": "Створити статтю",
+  "Recommended": "Рекомендовані",
+  "An error occurred while fetching recommended articles": "Сталася помилка при загрузці рекомендованих статей"
 }

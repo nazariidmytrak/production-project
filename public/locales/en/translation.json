@@ -20,5 +20,7 @@
   "Write a comment": "Write a comment",
   "Send": "Send",
   "Read more": "Read more...",
-  "Create article": "Create article"
+  "Create article": "Create article",
+  "Recommended": "Recommended",
+  "An error occurred while fetching recommended articles": "An error occurred while fetching recommended articles"
 }

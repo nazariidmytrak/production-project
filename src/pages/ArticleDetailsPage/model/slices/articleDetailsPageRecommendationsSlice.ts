@@ -1,15 +1,9 @@
-import {
-  PayloadAction,
-  createEntityAdapter,
-  createSlice,
-} from '@reduxjs/toolkit';
+import { createEntityAdapter, createSlice } from '@reduxjs/toolkit';
 
 import { StateSchema } from 'app/providers/StoreProvider';
-import { Comment } from 'entities/Comment';
+
 import { Article } from 'entities/Article';
 
-// eslint-disable-next-line
-import { fetchCommentsByArticleId } from '../services/fetchCommentByArticleId/fetchCommentByArticleId';
 // eslint-disable-next-line
 import { ArticlesDetailsRecommendationsSchema } from '../types/ArticlesDetailsRecommendationsSchema';
 // eslint-disable-next-line
@@ -54,4 +48,5 @@ const articleDetailsPageRecommendationsSlice = createSlice({
 });
 
 // eslint-disable-next-line
-export const { reducer: articleDetailsPageRecommendationsReducer } = articleDetailsPageRecommendationsSlice;
+export const { reducer: articleDetailsPageRecommendationsReducer } =
+  articleDetailsPageRecommendationsSlice;

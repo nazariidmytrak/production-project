@@ -17,11 +17,13 @@ import { CounterSchema } from 'entities/Counter';
 import { ProfileSchema } from 'entities/Profile';
 import { UserSchema } from 'entities/User';
 import { ArticleDetailsSchema } from 'entities/Article';
+import { rtkApi } from 'shared/api/rtkApi';
 
 export interface StateSchema {
   counter: CounterSchema;
   user: UserSchema;
   ui: UISchema;
+  [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>;
 
   // Async reducers
   loginForm?: LoginSchema;
