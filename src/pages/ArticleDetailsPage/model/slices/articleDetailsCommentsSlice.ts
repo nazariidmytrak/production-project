@@ -8,7 +8,7 @@ import { StateSchema } from 'app/providers/StoreProvider';
 import { Comment } from 'entities/Comment';
 import { ArticlesDetailsCommentsSchema } from '../types/ArticlesDetailsCommentsSchema';
 // eslint-disable-next-line
-import { fetchCommentsByArticleId } from '../services/fetchCommentByArticleId/fetchCommentByArticleId';
+import { fetchCommentsByArticleId } from '../services/fetchCommenstByArticleId/fetchCommentsByArticleId';
 
 const commentsAdapter = createEntityAdapter<Comment>({
   selectId: (comment) => comment.id,

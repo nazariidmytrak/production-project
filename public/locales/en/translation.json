@@ -22,5 +22,7 @@
   "Read more": "Read more...",
   "Create article": "Create article",
   "Recommended": "Recommended",
-  "An error occurred while fetching recommended articles": "An error occurred while fetching recommended articles"
+  "An error occurred while fetching recommended articles": "An error occurred while fetching recommended articles",
+  "An error occurred while fetching articles": "An error occurred while fetching articles",
+  "Comments": "Comments"
 }

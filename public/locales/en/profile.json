@@ -10,15 +10,16 @@
   "Avatar": "Avatar link",
   "Country": "Country",
   "Currency": "Currency",
-  
+
   "An error occurred while loading the profile": "An error occurred while loading the profile",
   "Try refreshing the page": "Try refreshing the page",
   "Cancel": "Cancel",
   "Save": "Save",
+  "Profile not found": "Profile not found",
 
   "Incorrect_user_data": "First and last name are required",
   "Incorrect_age": "Incorrect age",
   "No_data": "The form does not contain any data",
   "Incorrect_country": "Incorrect country",
-  "Server_error" : "Іerver error when saving data"
+  "Server_error": "Іerver error when saving data"
 }

@@ -5,7 +5,7 @@ import { getArticleDetailsData } from 'entities/Article/model/selectors/articleD
 import { Comment } from 'entities/Comment';
 import { getUserAuthData } from 'entities/User';
 // eslint-disable-next-line
-import { fetchCommentsByArticleId } from '../../services/fetchCommentByArticleId/fetchCommentByArticleId';
+import { fetchCommentsByArticleId } from '../fetchCommenstByArticleId/fetchCommentsByArticleId';
 
 export const addCommentForArticle = createAsyncThunk<
   Comment,

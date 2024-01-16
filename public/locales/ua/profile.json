@@ -9,12 +9,13 @@
   "Username": "Ім'я користувача",
   "Avatar": "Посилання на аватар",
   "Country": "Країна",
-  
+
   "Currency": "Валюта",
   "An error occurred while loading the profile": "Сталася помилка при загрузці профіля",
   "Try refreshing the page": "Спробуйте обновити сторінку",
   "Cancel": "Відмінити",
   "Save": "Зберегти",
+  "Profile not found": "Профіль не знайдено",
 
   "Incorrect_user_data": "Ім'я і прізвище обов'язкові",
   "Incorrect_age": "Невірний вік",

@@ -22,5 +22,7 @@
   "Read more": "Читати далі...",
   "Create article": "Створити статтю",
   "Recommended": "Рекомендовані",
-  "An error occurred while fetching recommended articles": "Сталася помилка при загрузці рекомендованих статей"
+  "An error occurred while fetching recommended articles": "Сталася помилка при загрузці рекомендованих статей",
+  "An error occurred while fetching articles": "Сталася помилка при загрузці статей",
+  "Comments": "Коментарі"
 }

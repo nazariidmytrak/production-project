@@ -9,7 +9,7 @@ import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDeco
 import ArticleDetailsPage from './ArticleDetailsPage';
 
 export default {
-  title: 'pages/ArticleDetailsPage',
+  title: 'pages/articleDetailsPage/ArticleDetailsPage',
   component: ArticleDetailsPage,
   argTypes: {
     backgroundColor: { control: 'color' },
@@ -60,9 +60,9 @@ const article: Article = {
   ],
 };
 
-export const Normal = Template.bind({});
-Normal.args = {};
-Normal.decorators = [
+export const Primary = Template.bind({});
+Primary.args = {};
+Primary.decorators = [
   StoreDecorator({
     articleDetails: {
       data: article,
