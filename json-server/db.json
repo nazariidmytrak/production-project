@@ -636,6 +636,12 @@
       "userId": "1",
       "text": "Some comment 9",
       "id": "Njtnabs"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "some comment 10",
+      "id": "nc4GK1J"
     }
   ],
   "users": [
@@ -643,14 +649,27 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "role": "ADMIN",
+      "roles": [
+        "ADMIN"
+      ],
       "avatar": "https://i.pravatar.cc/150?img=6"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "role": "USER",
+      "roles": [
+        "USER"
+      ],
+      "avatar": "https://eu.ui-avatars.com/api/?name=John+Doe&size=250"
+    },
+    {
+      "id": "3",
+      "username": "manager",
+      "password": "123",
+      "roles": [
+        "MANAGER"
+      ],
       "avatar": "https://eu.ui-avatars.com/api/?name=John+Doe&size=250"
     }
   ],

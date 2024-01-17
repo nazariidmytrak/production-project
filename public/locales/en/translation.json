@@ -8,8 +8,10 @@
   "Main": "Main",
   "Profile": "Profile",
   "Articles": "Articles",
+  "Admin page": "Admin page",
   "Login": "Login",
   "Logout": "Logout",
+  "Admin": "Admin",
   "Lorem": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
   "Increment": "Increment",
   "Decrement": "Decrement",
@@ -24,5 +26,6 @@
   "Recommended": "Recommended",
   "An error occurred while fetching recommended articles": "An error occurred while fetching recommended articles",
   "An error occurred while fetching articles": "An error occurred while fetching articles",
+  "You do not have access to this page": "You do not have access to this page",
   "Comments": "Comments"
 }

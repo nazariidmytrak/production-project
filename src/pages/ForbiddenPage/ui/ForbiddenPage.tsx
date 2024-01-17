@@ -3,9 +3,9 @@ import { useTranslation } from 'react-i18next';
 
 import { Page } from 'widgets/Page';
 
-const AboutPage = memo(() => {
+const ForbiddenPage = memo(() => {
   const { t } = useTranslation();
-  return <Page>{t('About')}</Page>;
+  return <Page>{t('You do not have access to this page')}</Page>;
 });
 
-export default AboutPage;
+export default ForbiddenPage;

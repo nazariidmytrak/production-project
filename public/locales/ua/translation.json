@@ -8,8 +8,10 @@
   "Main": "Головна",
   "Profile": "Профіль",
   "Articles": "Статті",
+  "Admin page": "Сторінка адміністратора",
   "Login": "Увійти",
   "Logout": "Вийти",
+  "Admin": "Адмін",
   "Lorem": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
   "Increment": "Збільшити",
   "Decrement": "Зменшити",
@@ -24,5 +26,6 @@
   "Recommended": "Рекомендовані",
   "An error occurred while fetching recommended articles": "Сталася помилка при загрузці рекомендованих статей",
   "An error occurred while fetching articles": "Сталася помилка при загрузці статей",
+  "You do not have access to this page": "У вас немає доступу до цієї сторінки",
   "Comments": "Коментарі"
 }
