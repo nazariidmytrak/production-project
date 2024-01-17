@@ -18,7 +18,7 @@ export const ArticleRecommendationsList = memo(
       isLoading,
       data: articles = [],
       error,
-    } = useArticleRecommendationsList(3);
+    } = useArticleRecommendationsList(4);
 
     if (error) {
       return (
