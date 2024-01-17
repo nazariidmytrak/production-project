@@ -32,7 +32,7 @@ import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleT
 import cls from './ArticleDetails.module.scss';
 
 interface ArticleDetailsProps {
-  id: string;
+  id?: string;
   className?: string;
 }
 
