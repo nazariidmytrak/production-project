@@ -11,12 +11,11 @@ import { AppLink } from 'shared/ui/AppLink/AppLink';
 import { HStack, VStack } from 'shared/ui/Stack';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import EyeIcon from 'shared/assets/icons/eye-20-20.svg';
+import { Article, ArticleTextBlock } from '../../model/types/article';
 import {
-  Article,
   ArticleBlockType,
-  ArticleTextBlock,
   ArticleView,
-} from '../../model/types/article';
+} from '../../model/constants/articleContants';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import cls from './ArticleListItem.module.scss';
 
