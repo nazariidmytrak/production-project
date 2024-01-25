@@ -4,8 +4,8 @@ import {
   createSlice,
 } from '@reduxjs/toolkit';
 
-import { StateSchema } from 'app/providers/StoreProvider';
-import { Comment } from 'entities/Comment';
+import { StateSchema } from '@/app/providers/StoreProvider';
+import { Comment } from '@/entities/Comment';
 import { ArticlesDetailsCommentsSchema } from '../types/ArticlesDetailsCommentsSchema';
 // eslint-disable-next-line
 import { fetchCommentsByArticleId } from '../services/fetchCommenstByArticleId/fetchCommentsByArticleId';

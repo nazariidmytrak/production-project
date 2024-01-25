@@ -7,8 +7,8 @@ import {
   useState,
 } from 'react';
 
-import { Mods, classNames } from 'shared/lib/classNames/classNames';
-import { HStack } from 'shared/ui/Stack';
+import { Mods, classNames } from '@/shared/lib/classNames/classNames';
+import { HStack } from '@/shared/ui/Stack';
 import cls from './Input.module.scss';
 
 type HTMLInputProps = Omit<

@@ -25,6 +25,7 @@ const getAsyncAnimationModules = async () => Promise.all([
   import('@use-gesture/react'),
 ]);
 
+// eslint-disable-next-line
 export const useAnimationLibs = () => useContext(AnimationContext) as Required<AnimationContextPayload>;
 
 export const AnimationProvider = ({ children }: { children: ReactNode }) => {

@@ -28,10 +28,10 @@
   --sidebar-width-collapsed: 80px;
 
   // Z-indexes
-  --modal-z-index: 10;
+  --modal-z-index: 100;
   --dropdown-z-index: 20;
   --listbox-z-index: 20;
-  --overlay-z-index: -1;
+  --overlay-z-index: 10;
   --drawer-z-index: 100;
 
   // Colors

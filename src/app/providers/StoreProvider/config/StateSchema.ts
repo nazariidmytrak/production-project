@@ -8,16 +8,16 @@ import {
 
 import { AxiosInstance } from 'axios';
 
-import { ArticlesPageSchema } from 'pages/ArticlesPage';
-import { ArticleDetailsPageSchema } from 'pages/ArticleDetailsPage';
-import { LoginSchema } from 'features/AuthByUsername';
-import { AddCommentFormSchema } from 'features/addCommentForm';
-import { UISchema } from 'features/UI';
-import { ProfileSchema } from 'features/editableProfileCard';
-import { CounterSchema } from 'entities/Counter';
-import { UserSchema } from 'entities/User';
-import { ArticleDetailsSchema } from 'entities/Article';
-import { rtkApi } from 'shared/api/rtkApi';
+import { ArticlesPageSchema } from '@/pages/ArticlesPage';
+import { ArticleDetailsPageSchema } from '@/pages/ArticleDetailsPage';
+import { LoginSchema } from '@/features/AuthByUsername';
+import { AddCommentFormSchema } from '@/features/addCommentForm';
+import { UISchema } from '@/features/UI';
+import { ProfileSchema } from '@/features/editableProfileCard';
+import { CounterSchema } from '@/entities/Counter';
+import { UserSchema } from '@/entities/User';
+import { ArticleDetailsSchema } from '@/entities/Article';
+import { rtkApi } from '@/shared/api/rtkApi';
 
 export interface StateSchema {
   counter: CounterSchema;
