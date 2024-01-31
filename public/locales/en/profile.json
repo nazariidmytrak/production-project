@@ -21,5 +21,8 @@
   "Incorrect_age": "Incorrect age",
   "No_data": "The form does not contain any data",
   "Incorrect_country": "Incorrect country",
-  "Server_error": "Іerver error when saving data"
+  "Server_error": "Іerver error when saving data",
+
+  "Rate this user": "Rate this user",
+  "Thank you for the rating!": "Thank you for the rating!"
 }

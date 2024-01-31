@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 
 import { Page } from '@/widgets/Page';
 import { EditableProfileCard } from '@/features/editableProfileCard';
+import { ProfileRating } from '@/features/profileRating';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { VStack } from '@/shared/ui/Stack/VStack/VStack';
 import { Text } from '@/shared/ui/Text/Text';
@@ -20,10 +21,19 @@ const ProfilePage = memo(({ className }: ProfilePageProps) => {
     return <Text text={t('Profile not found')} />;
   } */
 
+  if (!id) {
+    return (
+      <Page className={classNames('', {}, [className])}>
+        {t('Profile not found')}
+      </Page>
+    );
+  }
+
   return (
     <Page className={classNames('', {}, [className])}>
       <VStack gap='16' max>
         <EditableProfileCard id={id} />
+        <ProfileRating profileId={id} />
       </VStack>
     </Page>
   );

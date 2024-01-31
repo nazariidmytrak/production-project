@@ -15,6 +15,7 @@ import { Drawer } from '@/shared/ui/Drawer/Drawer';
 interface RatingCardProps {
   className?: string;
   title?: string;
+  rate?: number;
   feedbackTitle?: string;
   hasFeedback?: boolean;
   onCancel?: (starsCount: number) => void;
@@ -25,6 +26,7 @@ export const RatingCard = memo(
   ({
     className,
     title,
+    rate = 0,
     feedbackTitle,
     hasFeedback,
     onCancel,
@@ -32,7 +34,7 @@ export const RatingCard = memo(
   }: RatingCardProps) => {
     const { t } = useTranslation();
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [starsCount, setStarsCount] = useState(0);
+    const [starsCount, setStarsCount] = useState(rate);
     const [feedback, setFeedback] = useState('');
 
     const onSelectStars = useCallback(
@@ -69,10 +71,14 @@ export const RatingCard = memo(
     );
 
     return (
-      <Card className={classNames('', {}, [className])}>
+      <Card className={className} fullWidth>
         <VStack gap='8' align='center'>
-          <Text title={title} />
-          <StarRating size={40} onSelect={onSelectStars} />
+          <Text title={starsCount ? t('Thank you for the rating!') : title} />
+          <StarRating
+            selectedStars={starsCount}
+            size={40}
+            onSelect={onSelectStars}
+          />
         </VStack>
         <BrowserView>
           <Modal isOpen={isModalOpen} lazy>

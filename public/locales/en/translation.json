@@ -21,11 +21,14 @@
   "Invalid credentials": "Invalid credentials",
   "Write a comment": "Write a comment",
   "Send": "Send",
+  "Close": "Close",
   "Read more": "Read more...",
   "Create article": "Create article",
   "Recommended": "Recommended",
   "An error occurred while fetching recommended articles": "An error occurred while fetching recommended articles",
   "An error occurred while fetching articles": "An error occurred while fetching articles",
   "You do not have access to this page": "You do not have access to this page",
-  "Comments": "Comments"
+  "Comments": "Comments",
+  "Thank you for the rating!": "Thank you for the rating!",
+  "Your feedback": "Your feedback"
 }

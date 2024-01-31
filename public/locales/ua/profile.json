@@ -21,5 +21,8 @@
   "Incorrect_age": "Невірний вік",
   "No_data": "Дані не вказані",
   "Incorrect_country": "Невірна країна",
-  "Server_error": "Помилка сервера при збереженні данних"
+  "Server_error": "Помилка сервера при збереженні данних",
+
+  "Rate this user": "Оцініть цього користувача",
+  "Thank you for the rating!": "Thank you for the rating!"
 }

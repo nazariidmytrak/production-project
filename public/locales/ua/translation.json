@@ -21,11 +21,14 @@
   "Invalid credentials": "Невірні дані",
   "Write a comment": "Написати коментар",
   "Send": "Відправити",
+  "Close": "Закрити",
   "Read more": "Читати далі...",
   "Create article": "Створити статтю",
   "Recommended": "Рекомендовані",
   "An error occurred while fetching recommended articles": "Сталася помилка при загрузці рекомендованих статей",
   "An error occurred while fetching articles": "Сталася помилка при загрузці статей",
   "You do not have access to this page": "У вас немає доступу до цієї сторінки",
-  "Comments": "Коментарі"
+  "Comments": "Коментарі",
+  "Thank you for the rating!": "Дякуєм за відгук!",
+  "Your feedback": "Ваш відгук"
 }
