@@ -4,7 +4,7 @@ import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDe
 import { EditableProfileCardHeader } from './EditableProfileCardHeader';
 
 export default {
-  title: 'features/editableProfileCard/EditableProfileCardHeader',
+  title: 'features/EditableProfileCard/EditableProfileCardHeader',
   component: EditableProfileCardHeader,
   argTypes: {
     backgroundColor: { control: 'color' },

@@ -1,18 +1,18 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
-import { EditableProfileCard } from './EditableProfileCard';
+import { NotificationButton } from './NotificationButton';
 
 export default {
-  title: 'features/EditableProfileCard/EditableProfileCard',
-  component: EditableProfileCard,
+  title: 'features/Notification/NotificationButton',
+  component: NotificationButton,
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-} as ComponentMeta<typeof EditableProfileCard>;
+} as ComponentMeta<typeof NotificationButton>;
 
-const Template: ComponentStory<typeof EditableProfileCard> = (args) => (
-  <EditableProfileCard {...args} />
+const Template: ComponentStory<typeof NotificationButton> = (args) => (
+  <NotificationButton {...args} />
 );
 
 export const Primary = Template.bind({});
