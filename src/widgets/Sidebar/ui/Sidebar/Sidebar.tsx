@@ -1,8 +1,8 @@
 import { memo, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 
-import { LangSwitcher } from '@/widgets/LangSwitcher';
-import { ThemeSwitcher } from '@/widgets/ThemeSwitcher';
+import { LangSwitcher } from '@/features/LangSwitcher';
+import { ThemeSwitcher } from '@/features/ThemeSwitcher';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/Button/Button';
 import { VStack } from '@/shared/ui/Stack';
@@ -25,9 +25,10 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
   };
 
   const itemsList = useMemo(
-    () => sidebarItemsList.map((item) => (
-      <SidebarItem key={item.path} item={item} collapsed={collapsed} />
-    )),
+    () =>
+      sidebarItemsList.map((item) => (
+        <SidebarItem key={item.path} item={item} collapsed={collapsed} />
+      )),
     [collapsed, sidebarItemsList]
   );
 

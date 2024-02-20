@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-import { useTheme } from '@/app/providers/ThemeProvider';
+import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 import { Mods, classNames } from '@/shared/lib/classNames/classNames';
 import { Portal } from '@/shared/ui/Portal/Portal';
 import { Overlay } from '@/shared/ui/Overlay/Overlay';

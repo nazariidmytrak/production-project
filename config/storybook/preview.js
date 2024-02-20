@@ -1,11 +1,11 @@
 import { addDecorator } from '@storybook/react';
 
-import { Theme } from '../../src/app/providers/ThemeProvider';
-import { StyleDecorator } from '../../src/shared/config/storybook/StyleDecorator/StyleDecorator';
-import { ThemeDecorator } from '../../src/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { RouterDecorator } from '../../src/shared/config/storybook/RouterDecorator/RouterDecorator';
+import { Theme } from '@/shared/const/theme';
+import { StyleDecorator } from '@/shared/config/storybook/StyleDecorator/StyleDecorator';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { RouterDecorator } from '@/shared/config/storybook/RouterDecorator/RouterDecorator';
 // eslint-disable-next-line
-import { SuspenseDecorator } from '../../src/shared/config/storybook/SuspenseDecorator/SuspenseDecorator';
+import { SuspenseDecorator } from '@/shared/config/storybook/SuspenseDecorator/SuspenseDecorator';
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },

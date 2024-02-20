@@ -1,6 +1,6 @@
 import { memo, ReactNode, useCallback, useEffect } from 'react';
 
-import { useTheme } from '@/app/providers/ThemeProvider';
+import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import {
   useAnimationLibs,
