@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 
 import { getArticleDetailsData } from '@/entities/Article';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Button } from '@/shared/ui/Button/Button';
+import { Button } from '@/shared/ui/Button';
 import { HStack } from '@/shared/ui/Stack';
 import { RoutePath } from '@/shared/const/router';
 import { getCanEditArticle } from '../../model/selectors/article';

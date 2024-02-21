@@ -6,8 +6,8 @@ import {
   useAnimationLibs,
   AnimationProvider,
 } from '@/shared/lib/components/AnimationProvider';
-import { Overlay } from '@/shared/ui/Overlay/Overlay';
-import { Portal } from '@/shared/ui/Portal/Portal';
+import { Overlay } from '@/shared/ui/Overlay';
+import { Portal } from '@/shared/ui/Portal';
 
 import cls from './Drawer.module.scss';
 
@@ -113,10 +113,8 @@ const DrawerAsync = (props: DrawerProps) => {
   return <DrawerContent {...props} />;
 };
 
-export const Drawer = (props: DrawerProps) => {
-  return (
-    <AnimationProvider>
-      <DrawerAsync {...props} />
-    </AnimationProvider>
-  );
-};
+export const Drawer = (props: DrawerProps) => (
+  <AnimationProvider>
+    <DrawerAsync {...props} />
+  </AnimationProvider>
+);
