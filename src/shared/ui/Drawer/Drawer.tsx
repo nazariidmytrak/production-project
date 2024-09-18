@@ -6,8 +6,8 @@ import {
   useAnimationLibs,
   AnimationProvider,
 } from '@/shared/lib/components/AnimationProvider';
-import { Overlay } from '@/shared/ui/Overlay';
-import { Portal } from '@/shared/ui/Portal';
+import { Overlay } from '../Overlay';
+import { Portal } from '../Portal';
 
 import cls from './Drawer.module.scss';
 

@@ -2,7 +2,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { Theme } from '@/shared/const/theme';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Button } from '@/shared/ui/Button';
+import { Button } from '../../../Button';
 import { Popover } from './Popover';
 
 export default {
