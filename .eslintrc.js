@@ -76,7 +76,17 @@ module.exports = {
     'no-undef': 'off',
     'react/no-array-index-key': 'off',
     'nazarii-dmytrak-plugin/path-checker': ['error', { alias: '@' }],
-    'nazarii-dmytrak-plugin/public-api-imports': ['error', { alias: '@' }],
+    'nazarii-dmytrak-plugin/public-api-imports': [
+      'error',
+      {
+        alias: '@',
+        testFilesPatterns: [
+          '**/*.test.*',
+          '**/*.story.*',
+          '**/StoreDecorator.tsx',
+        ],
+      },
+    ],
   },
   globals: {
     __IS_DEV__: true,
