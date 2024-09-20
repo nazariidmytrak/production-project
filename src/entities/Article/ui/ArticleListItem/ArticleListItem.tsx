@@ -9,7 +9,7 @@ import { Avatar } from '@/shared/ui/Avatar';
 import { Button } from '@/shared/ui/Button';
 import { AppLink } from '@/shared/ui/AppLink';
 import { HStack, VStack } from '@/shared/ui/Stack';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteArticleDetails } from '@/shared/const/router';
 import EyeIcon from '@/shared/assets/icons/eye-20-20.svg';
 import { Article, ArticleTextBlock } from '../../model/types/article';
 import {
@@ -69,7 +69,7 @@ export const ArticleListItem = memo(
               )}
               <HStack justify='between' max>
                 <AppLink
-                  to={RoutePath.article_details + article.id}
+                  to={getRouteArticleDetails(article.id)}
                   target={target}
                 >
                   <Button>{t('Read more')}</Button>
@@ -85,7 +85,7 @@ export const ArticleListItem = memo(
     return (
       <AppLink
         className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
-        to={RoutePath.article_details + article.id}
+        to={getRouteArticleDetails(article.id)}
         target={target}
       >
         <Card>

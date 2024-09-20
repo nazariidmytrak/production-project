@@ -10,7 +10,7 @@ import {
 
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Dropdown } from '@/shared/ui/Popups';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteAdmin, getRouteProfile } from '@/shared/const/router';
 import { Avatar } from '@/shared/ui/Avatar';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 
@@ -41,13 +41,13 @@ export const AvatarDropdown = memo(({ className }: AvatarDropdownProps) => {
           ? [
             {
               content: t('Admin'),
-              href: RoutePath.admin_panel,
+              href: getRouteAdmin(),
             },
           ]
           : []),
         {
           content: t('Profile'),
-          href: RoutePath.profile + authData.id,
+          href: getRouteProfile(authData.id),
         },
         {
           content: t('Logout'),
