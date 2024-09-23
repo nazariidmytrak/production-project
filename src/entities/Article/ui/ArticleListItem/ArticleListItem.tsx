@@ -10,6 +10,8 @@ import { Button } from '@/shared/ui/Button';
 import { AppLink } from '@/shared/ui/AppLink';
 import { HStack, VStack } from '@/shared/ui/Stack';
 import { getRouteArticleDetails } from '@/shared/const/router';
+import { AppImage } from '@/shared/ui/AppImage';
+import { Skeleton } from '@/shared/ui/Skeleton';
 import EyeIcon from '@/shared/assets/icons/eye-20-20.svg';
 import { Article, ArticleTextBlock } from '../../model/types/article';
 import {
@@ -60,7 +62,12 @@ export const ArticleListItem = memo(
               </HStack>
               <Text title={article.title} />
               {types}
-              <img className={cls.img} src={article.img} alt={article.title} />
+              <AppImage
+                fallback={<Skeleton width='100%' height={250} />}
+                className={cls.img}
+                src={article.img}
+                alt={article.title}
+              />
               {textBlock && (
                 <ArticleTextBlockComponent
                   className={cls.textBlock}
@@ -91,7 +98,12 @@ export const ArticleListItem = memo(
         <Card>
           <VStack gap='8'>
             <div className={cls.imageWrapper}>
-              <img className={cls.img} src={article.img} alt={article.title} />
+              <AppImage
+                fallback={<Skeleton width={200} height={200} />}
+                className={cls.img}
+                src={article.img}
+                alt={article.title}
+              />
               <Text className={cls.date} text={article.createdAt} />
             </div>
             <HStack justify='between' max>
