@@ -102,6 +102,7 @@
     "npm": "^8.5.1",
     "reg-cli": "^0.17.6",
     "regenerator-runtime": "^0.13.9",
+    "rollup": "^3.29.5",
     "sass": "^1.49.9",
     "sass-loader": "^12.6.0",
     "storybook-addon-mock": "^2.4.1",
