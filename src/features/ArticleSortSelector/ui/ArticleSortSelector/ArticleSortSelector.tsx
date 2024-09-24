@@ -5,7 +5,7 @@ import { ArticleSortField } from '@/entities/Article';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Select, SelectOption } from '@/shared/ui/Select';
 import { HStack } from '@/shared/ui/Stack';
-import { SortOrder } from '@/shared/types';
+import { SortOrder } from '@/shared/types/sort';
 
 interface ArticleSortSelectorProps {
   className?: string;

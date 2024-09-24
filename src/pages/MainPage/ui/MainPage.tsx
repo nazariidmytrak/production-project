@@ -8,9 +8,8 @@ const MainPage = memo(() => {
   const { t } = useTranslation('main');
 
   return (
-    <Page>
+    <Page data-testid='MainPage'>
       {t('Main')}
-
       <RatingCard
         hasFeedback
         title={t('Your feedback')}

@@ -6,7 +6,7 @@ import {
   Article,
   ArticleView,
 } from '@/entities/Article';
-import { SortOrder } from '@/shared/types';
+import { SortOrder } from '@/shared/types/sort';
 
 export interface ArticlesPageSchema extends EntityState<Article> {
   error?: string;
