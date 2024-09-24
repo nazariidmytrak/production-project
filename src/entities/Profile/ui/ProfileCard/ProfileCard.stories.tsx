@@ -3,7 +3,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ProfileCard } from './ProfileCard';
 import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
-import Avatar from '@/shared/assets/tests/storybook.png';
+/* import Avatar from '@/shared/assets/tests/storybook.png'; */
 
 export default {
   title: 'entities/ProfileCard',
@@ -28,7 +28,8 @@ Primary.args = {
     country: Country.UKRAINE,
     city: 'City',
     currency: Currency.USD,
-    avatar: Avatar,
+    avatar:
+      'https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png?20170328184010',
   },
 };
 
