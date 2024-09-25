@@ -1,5 +1,4 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import withMock from 'storybook-addon-mock';
 
 import { User, UserRole } from '@/entities/User';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
@@ -11,7 +10,6 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-  decorators: [withMock],
 } as ComponentMeta<typeof AvatarDropdown>;
 
 const Template: ComponentStory<typeof AvatarDropdown> = (args) => (
@@ -27,7 +25,6 @@ const user: User = {
 
 export const Primary = Template.bind({});
 Primary.args = {};
-Primary.decorators = [StoreDecorator({})];
 Primary.decorators = [
   StoreDecorator({
     user: {
