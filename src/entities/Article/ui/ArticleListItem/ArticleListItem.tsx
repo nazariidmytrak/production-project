@@ -46,6 +46,7 @@ export const ArticleListItem = memo(
       ) as ArticleTextBlock;
       return (
         <div
+          data-testid='ArticleListItem'
           className={classNames(cls.ArticleListItem, {}, [
             className,
             cls[view],
@@ -91,6 +92,7 @@ export const ArticleListItem = memo(
 
     return (
       <AppLink
+        data-testid='ArticleListItem'
         className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
         to={getRouteArticleDetails(article.id)}
         target={target}
