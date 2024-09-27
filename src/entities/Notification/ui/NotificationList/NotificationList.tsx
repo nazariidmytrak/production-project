@@ -24,7 +24,7 @@ export const NotificationList = memo(({ className }: NotificationListProps) => {
         className={classNames(
           cls.NotificationList,
           { [cls.loading]: isLoading },
-          [className]
+          [className],
         )}
       >
         <Skeleton width='100%' height={80} border='8px' />

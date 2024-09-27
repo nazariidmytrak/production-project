@@ -46,7 +46,7 @@ export const RatingCard = memo(
           onAccept?.(selectedStarsCount);
         }
       },
-      [hasFeedback, onAccept]
+      [hasFeedback, onAccept],
     );
 
     const acceptHandler = useCallback(() => {
@@ -112,5 +112,5 @@ export const RatingCard = memo(
         </MobileView>
       </Card>
     );
-  }
+  },
 );

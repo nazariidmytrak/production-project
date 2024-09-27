@@ -72,5 +72,5 @@ export const Text = memo(
         )}
       </div>
     );
-  }
+  },
 );

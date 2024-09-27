@@ -15,7 +15,7 @@ describe('The user goes to the articles page', () => {
         url: '**/articles?*',
         headers: { 'Cache-Control': 'no-cache' },
       },
-      { fixture: 'articles.json' }
+      { fixture: 'articles.json' },
     );
     cy.getByTestId('ArticleList').should('exist');
     cy.getByTestId('ArticleListItem').should('have.length.greaterThan', 3);

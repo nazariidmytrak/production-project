@@ -48,7 +48,7 @@ export const ArticlesPageFilters = memo(
       (view: ArticleView) => {
         dispatch(articlesPageActions.setView(view));
       },
-      [dispatch]
+      [dispatch],
     );
 
     const onChangeSort = useCallback(
@@ -57,7 +57,7 @@ export const ArticlesPageFilters = memo(
         dispatch(articlesPageActions.setPage(1));
         fetchData();
       },
-      [dispatch, fetchData]
+      [dispatch, fetchData],
     );
 
     const onChangeOrder = useCallback(
@@ -66,7 +66,7 @@ export const ArticlesPageFilters = memo(
         dispatch(articlesPageActions.setPage(1));
         fetchData();
       },
-      [dispatch, fetchData]
+      [dispatch, fetchData],
     );
 
     const onChangeSearch = useCallback(
@@ -75,7 +75,7 @@ export const ArticlesPageFilters = memo(
         dispatch(articlesPageActions.setPage(1));
         debouncedFetchData();
       },
-      [dispatch, debouncedFetchData]
+      [dispatch, debouncedFetchData],
     );
 
     const onChangeType = useCallback(
@@ -84,7 +84,7 @@ export const ArticlesPageFilters = memo(
         dispatch(articlesPageActions.setPage(1));
         fetchData();
       },
-      [dispatch, fetchData]
+      [dispatch, fetchData],
     );
 
     return (
@@ -108,5 +108,5 @@ export const ArticlesPageFilters = memo(
         <ArticleTypeTabs value={type} onChangeType={onChangeType} />
       </VStack>
     );
-  }
+  },
 );

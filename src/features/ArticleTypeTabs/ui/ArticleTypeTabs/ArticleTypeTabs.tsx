@@ -33,14 +33,14 @@ export const ArticleTypeTabs = memo(
           content: t('Science'),
         },
       ],
-      [t]
+      [t],
     );
 
     const onTabClick = useCallback(
       (tab: TabItem) => {
         onChangeType(tab.value as ArticleType);
       },
-      [onChangeType]
+      [onChangeType],
     );
 
     return (
@@ -51,5 +51,5 @@ export const ArticleTypeTabs = memo(
         onTabClick={onTabClick}
       />
     );
-  }
+  },
 );

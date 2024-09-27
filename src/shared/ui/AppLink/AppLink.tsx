@@ -30,5 +30,5 @@ export const AppLink = memo(
     >
       {children}
     </Link>
-  )
+  ),
 );

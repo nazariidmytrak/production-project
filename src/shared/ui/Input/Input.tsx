@@ -96,5 +96,5 @@ export const Input = memo(
         </div>
       </HStack>
     );
-  }
+  },
 );

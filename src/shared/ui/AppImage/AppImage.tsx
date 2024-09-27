@@ -45,5 +45,5 @@ export const AppImage = memo(
     }
 
     return <img className={className} src={src} alt={alt} {...otherProps} />;
-  }
+  },
 );

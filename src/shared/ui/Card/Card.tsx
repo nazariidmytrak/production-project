@@ -32,5 +32,5 @@ export const Card = memo(
     >
       {children}
     </div>
-  )
+  ),
 );

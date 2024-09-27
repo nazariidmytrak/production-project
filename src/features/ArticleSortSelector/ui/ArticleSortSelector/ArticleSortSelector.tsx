@@ -36,7 +36,7 @@ export const ArticleSortSelector = memo(
           content: t('Descending'),
         },
       ],
-      [t]
+      [t],
     );
 
     const sortFieldOptions = useMemo<SelectOption<ArticleSortField>[]>(
@@ -54,7 +54,7 @@ export const ArticleSortSelector = memo(
           content: t('Views'),
         },
       ],
-      [t]
+      [t],
     );
 
     return (
@@ -73,5 +73,5 @@ export const ArticleSortSelector = memo(
         />
       </HStack>
     );
-  }
+  },
 );

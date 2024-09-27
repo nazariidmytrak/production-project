@@ -24,5 +24,5 @@ export const ArticleTextBlockComponent = memo(
         ))}
       </div>
     );
-  }
+  },
 );

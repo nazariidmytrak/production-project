@@ -59,5 +59,5 @@ export const Button = memo(
         {children}
       </button>
     );
-  }
+  },
 );

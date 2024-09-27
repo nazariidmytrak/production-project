@@ -75,5 +75,5 @@ export const EditableProfileCardHeader = memo(
         )}
       </HStack>
     );
-  }
+  },
 );

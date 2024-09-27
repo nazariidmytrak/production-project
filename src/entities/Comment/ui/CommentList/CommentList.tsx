@@ -41,5 +41,5 @@ export const CommentList = memo(
         )}
       </VStack>
     );
-  }
+  },
 );

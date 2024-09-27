@@ -20,5 +20,5 @@ export const Icon = memo(
       className={classNames('', {}, [className, cls[theme]])}
       {...otherProps}
     />
-  )
+  ),
 );

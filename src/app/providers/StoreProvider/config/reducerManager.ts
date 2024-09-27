@@ -13,7 +13,7 @@ import {
 } from './StateSchema';
 
 export function createReducerManager(
-  initialReducers: ReducersMapObject<StateSchema>
+  initialReducers: ReducersMapObject<StateSchema>,
 ): ReducerManager {
   // Create an object which maps keys to reducers
   const reducers = { ...initialReducers };

@@ -71,7 +71,7 @@ export const DrawerContent = memo(
         filterTaps: true,
         bounds: { top: 0 },
         rubberband: true,
-      }
+      },
     );
 
     if (!isOpen) {
@@ -100,7 +100,7 @@ export const DrawerContent = memo(
         </div>
       </Portal>
     );
-  }
+  },
 );
 
 const DrawerAsync = (props: DrawerProps) => {

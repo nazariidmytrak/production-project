@@ -23,7 +23,7 @@ export const Tabs = memo(
       (tab: TabItem) => () => {
         onTabClick(tab);
       },
-      [onTabClick]
+      [onTabClick],
     );
 
     return (
@@ -39,5 +39,5 @@ export const Tabs = memo(
         ))}
       </HStack>
     );
-  }
+  },
 );

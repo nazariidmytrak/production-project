@@ -17,11 +17,11 @@ describe('The user goes to the profile page', () => {
     cy.updateProfile('test firstname', 'test lastname');
     cy.getByTestId('ProfileCard.firstname').should(
       'have.value',
-      'test firstname'
+      'test firstname',
     );
     cy.getByTestId('ProfileCard.lastname').should(
       'have.value',
-      'test lastname'
+      'test lastname',
     );
   });
 });

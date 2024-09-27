@@ -42,7 +42,7 @@ const AddCommentForm = memo(
       (value: string) => {
         dispatch(addCommentFormActions.setText(value));
       },
-      [dispatch]
+      [dispatch],
     );
 
     const onSendHandler = useCallback(() => {
@@ -71,7 +71,7 @@ const AddCommentForm = memo(
         </HStack>
       </DynamicModuleLoader>
     );
-  }
+  },
 );
 
 export default AddCommentForm;

@@ -30,12 +30,13 @@ export const Select = <T extends string>({
   };
 
   const optionsList = useMemo(
-    () => options?.map((opt) => (
-      <option key={opt.value} className={cls.option} value={opt.value}>
-        {opt.content}
-      </option>
-    )),
-    [options]
+    () =>
+      options?.map((opt) => (
+        <option key={opt.value} className={cls.option} value={opt.value}>
+          {opt.content}
+        </option>
+      )),
+    [options],
   );
 
   const mods: Mods = { [cls.readonly]: readonly };

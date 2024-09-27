@@ -27,7 +27,7 @@ export const CountrySelect = memo(
       (value: string) => {
         onChange?.(value as Country);
       },
-      [onChange]
+      [onChange],
     );
 
     return (
@@ -41,5 +41,5 @@ export const CountrySelect = memo(
         direction='top right'
       />
     );
-  }
+  },
 );

@@ -25,7 +25,9 @@ export const Page = memo(
     const dispatch = useAppDispatch();
     const { pathname } = useLocation();
 
-    const scrollPosition = useSelector((state: StateSchema) => getUIScrollByPath(state, pathname));
+    const scrollPosition = useSelector((state: StateSchema) =>
+      getUIScrollByPath(state, pathname),
+    );
 
     useInfiniteScroll({
       triggerRef,
@@ -42,7 +44,7 @@ export const Page = memo(
         uiActions.setScrollPosition({
           position: e.currentTarget.scrollTop,
           path: pathname,
-        })
+        }),
       );
     }, 500);
 
@@ -57,5 +59,5 @@ export const Page = memo(
         {onScrollEnd ? <div className={cls.trigger} ref={triggerRef} /> : null}
       </main>
     );
-  }
+  },
 );

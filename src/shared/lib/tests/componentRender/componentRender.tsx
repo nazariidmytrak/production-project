@@ -15,7 +15,7 @@ export interface ComponentRenderOptions {
 
 export function componentRender(
   component: ReactNode,
-  options: ComponentRenderOptions = {}
+  options: ComponentRenderOptions = {},
 ) {
   const { route = '/', initialState, asyncReducers } = options;
   return render(
@@ -23,6 +23,6 @@ export function componentRender(
       <StoreProvider initialState={initialState} asyncReducers={asyncReducers}>
         <I18nextProvider i18n={i18nForTests}>{component}</I18nextProvider>
       </StoreProvider>
-    </MemoryRouter>
+    </MemoryRouter>,
   );
 }

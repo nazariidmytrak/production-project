@@ -20,13 +20,12 @@ interface AnimationContextPayload {
 const AnimationContext = createContext<AnimationContextPayload>({});
 
 // 2 libs depend on each other
-const getAsyncAnimationModules = async () => Promise.all([
-  import('@react-spring/web'),
-  import('@use-gesture/react'),
-]);
+const getAsyncAnimationModules = async () =>
+  Promise.all([import('@react-spring/web'), import('@use-gesture/react')]);
 
 // eslint-disable-next-line
-export const useAnimationLibs = () => useContext(AnimationContext) as Required<AnimationContextPayload>;
+export const useAnimationLibs = () =>
+  useContext(AnimationContext) as Required<AnimationContextPayload>;
 
 export const AnimationProvider = ({ children }: { children: ReactNode }) => {
   // refs - to have access to the values, but to avoid unnecessary rerenders
@@ -48,7 +47,7 @@ export const AnimationProvider = ({ children }: { children: ReactNode }) => {
       Spring: SpringRef.current,
       isLoaded,
     }),
-    [isLoaded]
+    [isLoaded],
   );
 
   return (

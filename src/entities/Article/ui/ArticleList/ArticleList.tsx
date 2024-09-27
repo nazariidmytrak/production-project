@@ -61,5 +61,5 @@ export const ArticleList = memo(
         {isLoading && getSkeletons(view)}
       </div>
     );
-  }
+  },
 );

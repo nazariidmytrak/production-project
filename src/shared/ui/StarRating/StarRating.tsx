@@ -48,7 +48,7 @@ export const StarRating = memo(
             className={classNames(
               cls.starIcon,
               { [cls.selected]: isSelected },
-              [currentStarsCount >= starNumber ? cls.hovered : cls.normal]
+              [currentStarsCount >= starNumber ? cls.hovered : cls.normal],
             )}
             Svg={StarIcon}
             key={starNumber}
@@ -61,5 +61,5 @@ export const StarRating = memo(
         ))}
       </div>
     );
-  }
+  },
 );

@@ -36,5 +36,5 @@ export const NotificationItem = memo(
     }
 
     return content;
-  }
+  },
 );

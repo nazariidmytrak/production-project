@@ -23,5 +23,5 @@ export const Skeleton = memo(
         style={styles}
       />
     );
-  }
+  },
 );

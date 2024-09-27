@@ -39,11 +39,11 @@ export const AvatarDropdown = memo(({ className }: AvatarDropdownProps) => {
       items={[
         ...(isAdminPanelAvailable
           ? [
-            {
-              content: t('Admin'),
-              href: getRouteAdmin(),
-            },
-          ]
+              {
+                content: t('Admin'),
+                href: getRouteAdmin(),
+              },
+            ]
           : []),
         {
           content: t('Profile'),

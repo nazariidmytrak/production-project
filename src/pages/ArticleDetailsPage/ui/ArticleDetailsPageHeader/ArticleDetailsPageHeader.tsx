@@ -38,5 +38,5 @@ export const ArticleDetailsPageHeader = memo(
         {canEdit && <Button onClick={onEditArticle}>{t('Edit')}</Button>}
       </HStack>
     );
-  }
+  },
 );

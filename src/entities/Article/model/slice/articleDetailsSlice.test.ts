@@ -38,8 +38,8 @@ describe('articleDetailsSlice.test', () => {
     expect(
       articleDetailsReducer(
         state as ArticleDetailsSchema,
-        fetchArticleById.pending
-      )
+        fetchArticleById.pending,
+      ),
     ).toEqual({
       isLoading: true,
     });
@@ -53,8 +53,8 @@ describe('articleDetailsSlice.test', () => {
     expect(
       articleDetailsReducer(
         state as ArticleDetailsSchema,
-        fetchArticleById.fulfilled(data, '', '1')
-      )
+        fetchArticleById.fulfilled(data, '', '1'),
+      ),
     ).toEqual({
       isLoading: false,
       data,

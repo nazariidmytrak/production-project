@@ -41,17 +41,17 @@ describe('features/EditableProfileCard', () => {
   test('Readonly switch', async () => {
     componentRender(<EditableProfileCard id='1' />, options);
     await userEvent.click(
-      screen.getByTestId('EditableProfileCardHeader.EditButton')
+      screen.getByTestId('EditableProfileCardHeader.EditButton'),
     );
     expect(
-      screen.getByTestId('EditableProfileCardHeader.CancelButton')
+      screen.getByTestId('EditableProfileCardHeader.CancelButton'),
     ).toBeInTheDocument();
   });
 
   test('The values must be reset when canceling', async () => {
     componentRender(<EditableProfileCard id='1' />, options);
     await userEvent.click(
-      screen.getByTestId('EditableProfileCardHeader.EditButton')
+      screen.getByTestId('EditableProfileCardHeader.EditButton'),
     );
 
     await userEvent.clear(screen.getByTestId('ProfileCard.firstname'));
@@ -64,7 +64,7 @@ describe('features/EditableProfileCard', () => {
     expect(screen.getByTestId('ProfileCard.lastname')).toHaveValue('user');
 
     await userEvent.click(
-      screen.getByTestId('EditableProfileCardHeader.CancelButton')
+      screen.getByTestId('EditableProfileCardHeader.CancelButton'),
     );
 
     expect(screen.getByTestId('ProfileCard.firstname')).toHaveValue('Nazarii');
@@ -74,17 +74,17 @@ describe('features/EditableProfileCard', () => {
   test('An error should appear', async () => {
     componentRender(<EditableProfileCard id='1' />, options);
     await userEvent.click(
-      screen.getByTestId('EditableProfileCardHeader.EditButton')
+      screen.getByTestId('EditableProfileCardHeader.EditButton'),
     );
 
     await userEvent.clear(screen.getByTestId('ProfileCard.firstname'));
 
     await userEvent.click(
-      screen.getByTestId('EditableProfileCardHeader.SaveButton')
+      screen.getByTestId('EditableProfileCardHeader.SaveButton'),
     );
 
     expect(
-      screen.getByTestId('EditableProfileCard.Error.Paragraph')
+      screen.getByTestId('EditableProfileCard.Error.Paragraph'),
     ).toBeInTheDocument();
   });
 

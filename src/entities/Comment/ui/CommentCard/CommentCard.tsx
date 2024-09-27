@@ -58,5 +58,5 @@ export const CommentCard = memo(
         <Text text={comment.text} />
       </VStack>
     );
-  }
+  },
 );

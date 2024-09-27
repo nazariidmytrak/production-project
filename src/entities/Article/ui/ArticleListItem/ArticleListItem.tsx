@@ -42,7 +42,7 @@ export const ArticleListItem = memo(
 
     if (view === ArticleView.BIG) {
       const textBlock = article.blocks.find(
-        (block) => block.type === ArticleBlockType.TEXT
+        (block) => block.type === ArticleBlockType.TEXT,
       ) as ArticleTextBlock;
       return (
         <div
@@ -117,5 +117,5 @@ export const ArticleListItem = memo(
         </Card>
       </AppLink>
     );
-  }
+  },
 );

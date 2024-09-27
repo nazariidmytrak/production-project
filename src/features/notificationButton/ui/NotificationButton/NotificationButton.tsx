@@ -52,5 +52,5 @@ export const NotificationButton = memo(
         </MobileView>
       </div>
     );
-  }
+  },
 );

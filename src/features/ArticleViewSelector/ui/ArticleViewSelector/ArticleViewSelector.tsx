@@ -47,7 +47,7 @@ export const ArticleViewSelector = memo(
               className={classNames(
                 '',
                 { [cls.notSelected]: viewType.view !== view },
-                []
+                [],
               )}
               Svg={viewType.icon}
             />
@@ -55,5 +55,5 @@ export const ArticleViewSelector = memo(
         ))}
       </HStack>
     );
-  }
+  },
 );
