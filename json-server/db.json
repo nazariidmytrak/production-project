@@ -679,7 +679,7 @@
         "isCounterEnabled": true
       },
       "jsonSettings": {
-        "theme": "app_orange_theme",
+        "theme": "app_dark_theme",
         "isFirstVisit": true,
         "settingsPageHasBeenOpened": false
       },
@@ -709,7 +709,10 @@
         "isArticleRatingEnabled": true,
         "isCounterEnabled": false
       },
-      "avatar": "https://eu.ui-avatars.com/api/?name=John+Doe&size=250"
+      "avatar": "https://eu.ui-avatars.com/api/?name=John+Doe&size=250",
+      "jsonSettings": {
+        "theme": "app_light_theme"
+      }
     }
   ],
   "profile": [

@@ -3,7 +3,8 @@ import { useSelector } from 'react-redux';
 
 import { Sidebar } from '@/widgets/Sidebar';
 import { Navbar } from '@/widgets/Navbar';
-import { getUserInited, userActions } from '@/entities/User';
+import { PageLoader } from '@/widgets/PageLoader';
+import { getUserInited, initAuthData } from '@/entities/User';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
@@ -15,8 +16,12 @@ const App = () => {
   const inited = useSelector(getUserInited);
 
   useEffect(() => {
-    dispatch(userActions.initAuthData());
+    dispatch(initAuthData());
   }, [dispatch]);
+
+  if (!inited) {
+    return <PageLoader />;
+  }
 
   return (
     <div className={classNames('app', {}, [theme])}>
