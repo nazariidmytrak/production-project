@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useSearchParams } from 'react-router-dom';
 
 import { Page } from '@/widgets/Page';
+import { ArticlesPageGreeting } from '@/features/articlesPageGreeting';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import {
   DynamicModuleLoader,
@@ -51,6 +52,7 @@ const ArticlesPage = memo(({ className }: ArticlesPageProps) => {
         <VStack gap='32' max>
           <ArticlesPageFilters />
           <ArticleInfiniteList />
+          <ArticlesPageGreeting />
         </VStack>
       </Page>
     </DynamicModuleLoader>
