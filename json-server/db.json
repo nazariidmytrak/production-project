@@ -681,7 +681,8 @@
       "jsonSettings": {
         "theme": "app_dark_theme",
         "isFirstVisit": true,
-        "settingsPageHasBeenOpened": false
+        "settingsPageHasBeenOpened": false,
+        "hasArticlesPageBeenOpened": true
       },
       "avatar": "https://i.pravatar.cc/150?img=6"
     },
@@ -696,7 +697,10 @@
         "isArticleRatingEnabled": false,
         "isCounterEnabled": false
       },
-      "avatar": "https://eu.ui-avatars.com/api/?name=John+Doe&size=250"
+      "avatar": "https://eu.ui-avatars.com/api/?name=John+Doe&size=250",
+      "jsonSettings": {
+        "hasArticlesPageBeenOpened": true
+      }
     },
     {
       "id": "3",
