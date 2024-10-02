@@ -44,6 +44,8 @@ export const ArticleViewSelector = memo(
             theme={ButtonTheme.CLEAR}
           >
             <Icon
+              width={24}
+              height={24}
               className={classNames(
                 '',
                 { [cls.notSelected]: viewType.view !== view },
