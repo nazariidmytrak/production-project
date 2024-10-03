@@ -8,9 +8,9 @@ import { ArticleTypeTabs } from '@/features/ArticleTypeTabs';
 import { ArticleView, ArticleSortField, ArticleType } from '@/entities/Article';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Card } from '@/shared/ui/Card';
-import { Input } from '@/shared/ui/Input';
-import { HStack, VStack } from '@/shared/ui/Stack';
+import { Card } from '@/shared/ui/deprecated/Card';
+import { Input } from '@/shared/ui/deprecated/Input';
+import { HStack, VStack } from '@/shared/ui/deprecated/Stack';
 import { SortOrder } from '@/shared/types/sort';
 import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';
 import {

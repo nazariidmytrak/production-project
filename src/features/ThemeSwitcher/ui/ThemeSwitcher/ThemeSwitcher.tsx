@@ -4,9 +4,9 @@ import { saveJsonSettings } from '@/entities/User';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import ThemeIcon from '@/shared/assets/icons/dark-theme-icon.svg';
-import { Button, ButtonTheme } from '@/shared/ui/Button';
+import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Icon, IconTheme } from '@/shared/ui/Icon';
+import { Icon, IconTheme } from '@/shared/ui/deprecated/Icon';
 
 interface ThemeSwitcherProps {
   className?: string;

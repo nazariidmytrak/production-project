@@ -9,9 +9,9 @@ import {
 } from '@/entities/User';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Dropdown } from '@/shared/ui/Popups';
+import { Dropdown } from '@/shared/ui/deprecated/Popups';
 import { getRouteAdmin, getRouteProfile } from '@/shared/const/router';
-import { Avatar } from '@/shared/ui/Avatar';
+import { Avatar } from '@/shared/ui/deprecated/Avatar';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 
 interface AvatarDropdownProps {
