@@ -2,7 +2,7 @@ import { ReactNode, memo, useCallback } from 'react';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Card, CardTheme } from '../Card';
-import { HStack } from '../Stack';
+import { HStack } from '../../redesigned/Stack';
 import cls from './Tabs.module.scss';
 
 export interface TabItem {

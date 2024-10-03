@@ -1,0 +1,39 @@
+.Sidebar {
+  position: relative;
+  height: calc(100vh - var(--navbar-height));
+  width: var(--sidebar-width);
+  background: var(--inverted-bg-color);
+  transition: width 0.3s ease;
+
+  .switchers {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    position: absolute;
+    bottom: 20px;
+  }
+
+  .theme {
+    display: inline-flex;
+  }
+
+  .collapseBtn {
+    position: absolute;
+    right: -32px;
+    bottom: 32px;
+  }
+
+  .items {
+    margin: 20px 0 0 30px;
+  }
+}
+
+.collapsed {
+  width: var(--sidebar-width-collapsed);
+
+  .switchers {
+    flex-direction: column;
+    align-items: center;
+  }
+}

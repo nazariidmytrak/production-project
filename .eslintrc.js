@@ -59,6 +59,7 @@ module.exports = {
           'border',
           'feature',
           'fill',
+          'variant',
         ],
       },
     ],

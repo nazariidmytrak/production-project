@@ -1,7 +1,7 @@
 .MainLayout {
   display: grid;
   grid-template-areas: 'sidebar content rightbar';
-  grid-template-columns: 284px 1fr 175px;
+  grid-template-columns: 284px 1fr 100px;
   min-height: 100vh;
 }
 
@@ -15,10 +15,10 @@
 .sidebar {
   grid-area: sidebar;
   padding: 32px;
-  justify-self: center;
 }
 
 .content {
+  width: 100%;
   grid-area: content;
   max-width: 1200px;
   justify-self: center;

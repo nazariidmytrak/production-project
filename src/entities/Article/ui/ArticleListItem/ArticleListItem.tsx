@@ -8,7 +8,7 @@ import { Card } from '@/shared/ui/deprecated/Card';
 import { Avatar } from '@/shared/ui/deprecated/Avatar';
 import { Button } from '@/shared/ui/deprecated/Button';
 import { AppLink } from '@/shared/ui/deprecated/AppLink';
-import { HStack, VStack } from '@/shared/ui/deprecated/Stack';
+import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 import { getRouteArticleDetails } from '@/shared/const/router';
 import { AppImage } from '@/shared/ui/deprecated/AppImage';
 import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
