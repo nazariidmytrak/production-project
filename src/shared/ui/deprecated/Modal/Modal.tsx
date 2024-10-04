@@ -2,9 +2,9 @@ import { ReactNode } from 'react';
 
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 import { Mods, classNames } from '@/shared/lib/classNames/classNames';
-import { Portal } from '../Portal';
-import { Overlay } from '../Overlay';
 import { useModal } from '@/shared/lib/hooks/useModal/useModal';
+import { Portal } from '../../redesigned/Portal';
+import { Overlay } from '../../redesigned/Overlay';
 import cls from './Modal.module.scss';
 
 interface ModalProps {

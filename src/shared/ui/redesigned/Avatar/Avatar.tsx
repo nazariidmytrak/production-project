@@ -14,11 +14,6 @@ interface AvatarProps {
   alt?: string;
 }
 
-/**
- * Deprecated, use new components from the "redesigned" folder.
- * @deprecated
- */
-
 export const Avatar = ({ className, src, size = 100, alt }: AvatarProps) => {
   const mods: Mods = {};
 
