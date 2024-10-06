@@ -1,5 +1,4 @@
 import { memo, useCallback } from 'react';
-import { useTranslation } from 'react-i18next';
 import { useSearchParams } from 'react-router-dom';
 
 import { Page } from '@/widgets/Page';
@@ -12,13 +11,16 @@ import {
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { VStack } from '@/shared/ui/redesigned/Stack';
-
+import { ToggleFeatures } from '@/shared/lib/features';
+import { StickyContentLayout } from '@/shared/layouts/StickyContentLayout';
 import { articlesPageReducer } from '../../model/slices/articlesPageSlice';
+import { ViewSelectorContainer } from '../ViewSelectorContainer/ViewSelectorContainer';
 // eslint-disable-next-line
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters';
 import { ArticleInfiniteList } from '../ArticleInfiniteList/ArticleInfiniteList';
+import { FiltersContainer } from '../FiltersContainer/FiltersContainer';
 import cls from './ArticlesPage.module.scss';
 
 interface ArticlesPageProps {
@@ -30,7 +32,6 @@ const reducers: ReducersList = {
 };
 
 const ArticlesPage = memo(({ className }: ArticlesPageProps) => {
-  const { t } = useTranslation('article');
   const dispatch = useAppDispatch();
   const [searchParams] = useSearchParams();
 
@@ -42,19 +43,46 @@ const ArticlesPage = memo(({ className }: ArticlesPageProps) => {
     dispatch(initArticlesPage(searchParams));
   });
 
+  const content = (
+    <ToggleFeatures
+      feature='isAppRedesigned'
+      on={
+        <StickyContentLayout
+          left={<ViewSelectorContainer />}
+          right={<FiltersContainer />}
+          content={
+            <Page
+              data-testid='ArticlesPage'
+              className={classNames(cls.ArticlesPage, {}, [className])}
+              onScrollEnd={onLoadNextPart}
+            >
+              <VStack gap='32' max>
+                <ArticleInfiniteList />
+                <ArticlesPageGreeting />
+              </VStack>
+            </Page>
+          }
+        />
+      }
+      off={
+        <Page
+          data-testid='ArticlesPage'
+          className={classNames(cls.ArticlesPage, {}, [className])}
+          onScrollEnd={onLoadNextPart}
+        >
+          <VStack gap='32' max>
+            <ArticlesPageFilters />
+            <ArticleInfiniteList />
+            <ArticlesPageGreeting />
+          </VStack>
+        </Page>
+      }
+    />
+  );
+
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
-      <Page
-        data-testid='ArticlesPage'
-        className={classNames(cls.ArticlesPage, {}, [className])}
-        onScrollEnd={onLoadNextPart}
-      >
-        <VStack gap='32' max>
-          <ArticlesPageFilters />
-          <ArticleInfiniteList />
-          <ArticlesPageGreeting />
-        </VStack>
-      </Page>
+      {content}
     </DynamicModuleLoader>
   );
 });

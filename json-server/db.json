@@ -701,7 +701,7 @@
       "avatar": "https://eu.ui-avatars.com/api/?name=John+Doe&size=250",
       "jsonSettings": {
         "hasArticlesPageBeenOpened": true,
-        "theme": "app_light_theme"
+        "theme": "app_dark_theme"
       }
     },
     {

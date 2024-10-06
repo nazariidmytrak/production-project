@@ -1,33 +1,32 @@
-import { Fragment, ReactNode } from 'react';
+import { Fragment, ReactNode, useMemo } from 'react';
 import { Listbox as HListBox } from '@headlessui/react';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
+import { DropdownDirection } from '@/shared/types/ui';
 import { Button } from '../../../Button';
 import { HStack } from '../../../../redesigned/Stack';
-import { DropdownDirection } from '@/shared/types/ui';
-
 import { mapDirectionClass } from '../../styles/constants';
 import cls from './ListBox.module.scss';
 import popupCls from '../../styles/popup.module.scss';
 
-export interface ListBoxItem {
+export interface ListBoxItem<T extends string> {
   value: string;
   content: ReactNode;
   disabled?: boolean;
 }
 
-interface ListBoxProps {
-  items?: ListBoxItem[];
+interface ListBoxProps<T extends string> {
+  items?: ListBoxItem<T>[];
   className?: string;
-  value?: string;
+  value?: T;
   defaultValue?: string;
-  onChange: (value: string) => void;
+  onChange: (value: T) => void;
   readonly?: boolean;
   direction?: DropdownDirection;
   label?: string;
 }
 
-export function ListBox({
+export function ListBox<T extends string>({
   value,
   items,
   label,
@@ -36,8 +35,13 @@ export function ListBox({
   direction = 'bottom right',
   className,
   onChange,
-}: ListBoxProps) {
+}: ListBoxProps<T>) {
   const optionsClasses = [mapDirectionClass[direction], popupCls.menu];
+
+  const selectedItem = useMemo(
+    () => items?.find((item) => item.value === value),
+    [items, value],
+  );
 
   return (
     <HStack gap='4'>
@@ -54,7 +58,9 @@ export function ListBox({
         onChange={onChange}
       >
         <HListBox.Button disabled={readonly} className={popupCls.trigger}>
-          <Button disabled={readonly}>{value ?? defaultValue}</Button>
+          <Button variant='filled' disabled={readonly}>
+            {selectedItem?.content ?? defaultValue}
+          </Button>
         </HListBox.Button>
         <HListBox.Options
           className={classNames(cls.options, {}, optionsClasses)}
@@ -73,8 +79,11 @@ export function ListBox({
                     [popupCls.disabled]: item.disabled,
                   })}
                 >
-                  {item.content}
-                  {selected && '●'}
+                  <HStack gap='4'>
+                    <span> {item.content}</span>
+                    {/* eslint-disable-next-line i18next/no-literal-string */}
+                    {selected && <span>●</span>}
+                  </HStack>
                 </li>
               )}
             </HListBox.Option>

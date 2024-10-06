@@ -17,8 +17,11 @@
   }
 
   &.filled {
+    padding: 8px 16px;
     background: var(--light-bg-redesigned);
     border-radius: 34px;
+    border: none;
+    outline: none;
   }
 
   &.square {
