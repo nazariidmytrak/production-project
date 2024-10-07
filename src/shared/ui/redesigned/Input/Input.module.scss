@@ -1,47 +1,52 @@
+.addonLeft,
+.addonRight {
+  display: flex;
+
+  svg {
+    transition: all 0.3s;
+  }
+}
+
+.InputWrapper {
+  width: 100%;
+  height: 32px;
+  display: flex;
+  padding: 8px 16px;
+  align-items: center;
+  border: 2px solid var(--icon-redesigned);
+  border-radius: 48px;
+  transition: all 0.3s;
+
+  &.focused {
+    border-color: var(--accent-redesigned);
+
+    .addonLeft svg,
+    .addonRight svg {
+      color: var(--accent-redesigned);
+    }
+  }
+
+  &.readonly {
+    opacity: 0.6;
+  }
+
+  &.withAddonLeft {
+    padding-left: 8px;
+  }
+
+  &.withAddonRight {
+    padding-right: 8px;
+  }
+}
+
 .input {
   width: 100%;
-  background: transparent;
+  background: none;
   border: none;
   outline: none;
+  color: var(--text-redesigned);
 
-  color: transparent;
-  text-shadow: 0 0 0 var(--primary-color);
-
-  &:focus {
-    outline: none;
-  }
-}
-
-.caretWrapper {
-  flex-grow: 1;
-  position: relative;
-}
-
-.caret {
-  width: 9px;
-  height: 3px;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-
-  background: var(--primary-color);
-  animation: blink 0.7s forwards infinite;
-}
-
-.readonly {
-  opacity: 0.6;
-}
-
-@keyframes blink {
-  0% {
-    opacity: 0;
-  }
-
-  50% {
-    opacity: 0.01;
-  }
-
-  100% {
-    opacity: 1;
+  &::placeholder {
+    color: var(--hint-redesigned);
   }
 }

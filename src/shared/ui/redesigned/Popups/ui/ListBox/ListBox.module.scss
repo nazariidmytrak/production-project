@@ -10,3 +10,11 @@
   cursor: pointer;
   padding: 10px 20px;
 }
+
+.arrowIcon {
+  transition: all 0.3s;
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
