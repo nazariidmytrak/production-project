@@ -11,7 +11,7 @@
 .active {
   background: var(--light-bg-redesigned);
   transition: all 0.3s;
-  
+
   /*  border-radius: 8px; */
 }
 
@@ -45,5 +45,5 @@
 }
 
 .disabled {
-  opacity: 0.6;
+  /*  opacity: 0.6; */
 }

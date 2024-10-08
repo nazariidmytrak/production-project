@@ -2,15 +2,15 @@
   "Profile": "Профіль",
   "Edit": "Змінити",
 
-  "FirstName": "Ваше ім'я",
-  "LastName": "Ваше прізвище",
-  "Age": "Ваш вік",
+  "FirstName": "Ім'я",
+  "LastName": "Прізвище",
+  "Age": "Вік",
   "City": "Місто",
   "Username": "Ім'я користувача",
   "Avatar": "Посилання на аватар",
   "Country": "Країна",
-
   "Currency": "Валюта",
+  
   "An error occurred while loading the profile": "Сталася помилка при загрузці профіля",
   "Try refreshing the page": "Спробуйте обновити сторінку",
   "Cancel": "Відмінити",

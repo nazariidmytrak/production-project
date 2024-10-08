@@ -60,6 +60,7 @@ module.exports = {
           'feature',
           'fill',
           'variant',
+          'size',
         ],
       },
     ],
