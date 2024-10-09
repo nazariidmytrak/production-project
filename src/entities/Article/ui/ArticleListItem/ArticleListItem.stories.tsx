@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { ArticleListItem } from './ArticleListItem';
+import { ArticleListItemDeprecated } from './deprecated/ArticleListItemDeprecated';
 import { Article } from '../../model/types/article';
 import {
   ArticleBlockType,
@@ -10,14 +10,14 @@ import {
 
 export default {
   title: 'entities/Article/ArticleListItem',
-  component: ArticleListItem,
+  component: ArticleListItemDeprecated,
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-} as ComponentMeta<typeof ArticleListItem>;
+} as ComponentMeta<typeof ArticleListItemDeprecated>;
 
-const Template: ComponentStory<typeof ArticleListItem> = (args) => (
-  <ArticleListItem {...args} />
+const Template: ComponentStory<typeof ArticleListItemDeprecated> = (args) => (
+  <ArticleListItemDeprecated {...args} />
 );
 
 const article: Article = {

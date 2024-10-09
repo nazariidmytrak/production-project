@@ -70,3 +70,11 @@
     font: var(--font-l-redesigned);
   }
 }
+
+// Misc
+.bold {
+  .title,
+  .text {
+    font-weight: 700;
+  }
+}

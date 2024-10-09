@@ -14,7 +14,7 @@ import { Avatar } from '@/shared/ui/deprecated/Avatar';
 import { Icon } from '@/shared/ui/deprecated/Icon';
 import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
-import EyeIcon from '@/shared/assets/icons/eye-20-20.svg';
+import EyeIcon from '@/shared/assets/icons/deprecated/eye.svg';
 import CalendarIcon from '@/shared/assets/icons/calendar-20-20.svg';
 
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
