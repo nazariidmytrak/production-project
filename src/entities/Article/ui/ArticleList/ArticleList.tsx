@@ -3,6 +3,8 @@ import { useTranslation } from 'react-i18next';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Text, TextSize } from '@/shared/ui/deprecated/Text';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { HStack } from '@/shared/ui/redesigned/Stack';
 import { Article } from '../../model/types/article';
 import { ArticleView } from '../../model/constants/articleContants';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
@@ -51,15 +53,30 @@ export const ArticleList = memo(
         </div>
       );
     }
-
     return (
-      <div
-        data-testid='ArticleList'
-        className={classNames(cls.ArticleList, {}, [className, cls[view]])}
-      >
-        {articles.length > 0 ? articles.map(renderArticle) : null}
-        {isLoading && getSkeletons(view)}
-      </div>
+      <ToggleFeatures
+        feature='isAppRedesigned'
+        on={
+          <HStack
+            wrap='wrap'
+            gap='16'
+            data-testid='ArticleList'
+            className={classNames(cls.ArticleListRedesigned, {}, [])}
+          >
+            {articles.length > 0 ? articles.map(renderArticle) : null}
+            {isLoading && getSkeletons(view)}
+          </HStack>
+        }
+        off={
+          <div
+            data-testid='ArticleList'
+            className={classNames(cls.ArticleList, {}, [className, cls[view]])}
+          >
+            {articles.length > 0 ? articles.map(renderArticle) : null}
+            {isLoading && getSkeletons(view)}
+          </div>
+        }
+      />
     );
   },
 );

@@ -61,6 +61,7 @@ module.exports = {
           'fill',
           'variant',
           'size',
+          'wrap',
         ],
       },
     ],

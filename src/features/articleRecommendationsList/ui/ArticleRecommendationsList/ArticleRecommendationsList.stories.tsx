@@ -21,7 +21,10 @@ const article: Article = {
   img: '',
   createdAt: '',
   views: 123,
-  user: { id: '1', username: '123' },
+  user: {
+    id: '1',
+    username: '123',
+  },
   blocks: [],
   type: [],
   title: '123',
@@ -34,7 +37,7 @@ Primary.decorators = [StoreDecorator({})];
 Primary.parameters = {
   mockData: [
     {
-      url: `${__API__}/articles?_limit=3`,
+      url: `${__API__}/articles?_limit=3&_expand=user`,
       method: 'GET',
       status: 200,
       response: [
