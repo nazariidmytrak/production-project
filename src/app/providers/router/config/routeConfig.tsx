@@ -7,6 +7,7 @@ import { ForbiddenPage } from '@/pages/ForbiddenPage';
 import { MainPage } from '@/pages/MainPage';
 import { NotFoundPage } from '@/pages/NotFoundPage';
 import { ProfilePage } from '@/pages/ProfilePage';
+import { SettingsPage } from '@/pages/SettingsPage';
 import { UserRole } from '@/entities/User';
 import { AppRoutesProps } from '@/shared/types/router';
 import {
@@ -16,6 +17,7 @@ import {
   getRouteAbout,
   getRouteProfile,
   getRouteArticles,
+  getRouteSettings,
   getRouteForbidden,
   getRouteArticleEdit,
   getRouteArticleCreate,
@@ -65,6 +67,10 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
   [AppRoutes.FORBIDDEN]: {
     path: getRouteForbidden(),
     element: <ForbiddenPage />,
+  },
+  [AppRoutes.SETTINGS]: {
+    path: getRouteSettings(),
+    element: <SettingsPage />,
   },
 
   // last

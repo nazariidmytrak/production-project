@@ -8,7 +8,11 @@ import {
   getIsAdminPanelAvailable,
 } from '@/entities/User';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { getRouteAdmin, getRouteProfile } from '@/shared/const/router';
+import {
+  getRouteAdmin,
+  getRouteProfile,
+  getRouteSettings,
+} from '@/shared/const/router';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { Dropdown } from '@/shared/ui/redesigned/Popups';
@@ -49,6 +53,10 @@ export const AvatarDropdown = memo(({ className }: AvatarDropdownProps) => {
     {
       content: t('Profile'),
       href: getRouteProfile(authData.id),
+    },
+    {
+      content: t('Settings'),
+      href: getRouteSettings(),
     },
     {
       content: t('Logout'),
