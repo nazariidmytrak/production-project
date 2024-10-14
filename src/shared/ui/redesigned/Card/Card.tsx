@@ -1,6 +1,6 @@
 import { HTMLAttributes, ReactNode, memo } from 'react';
 
-import { classNames } from '@/shared/lib/classNames/classNames';
+import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import cls from './Card.module.scss';
 
 export type CardVariant = 'normal' | 'outlined' | 'light';
@@ -19,6 +19,7 @@ interface CardProps extends HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
   variant?: CardVariant;
   fullWidth?: boolean;
+  fullHeight?: boolean;
   padding?: CardPadding;
   border?: CardBorder;
 }
@@ -28,6 +29,7 @@ export const Card = memo(
     className,
     children,
     fullWidth,
+    fullHeight,
     padding = '8',
     border = 'normal',
     variant = 'normal',
@@ -35,9 +37,14 @@ export const Card = memo(
   }: CardProps) => {
     const paddingClass = mapPaddingToClass[padding];
 
+    const mods: Mods = {
+      [cls.fullWidth]: fullWidth,
+      [cls.fullHeight]: fullHeight,
+    };
+
     return (
       <div
-        className={classNames(cls.Card, { [cls.fullWidth]: fullWidth }, [
+        className={classNames(cls.Card, mods, [
           className,
           cls[variant],
           cls[border],

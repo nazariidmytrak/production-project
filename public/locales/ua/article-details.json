@@ -20,5 +20,6 @@
   "Science": "Наука",
   "Rate this article": "Оцініть цю статтю",
   "Feedback": "Залиште відгук для цієї статті, це допоможе нам покращити якість",
-  "Article rating is coming soon!": "Рейтинг статті буде незабаром!"
+  "Article rating is coming soon!": "Рейтинг статті буде незабаром!",
+  "views": "Переглядів: {{count}}"
 }

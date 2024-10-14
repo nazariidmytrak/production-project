@@ -17,7 +17,6 @@ interface UiDesignSwitcherProps {
 export const UiDesignSwitcher = memo(({ className }: UiDesignSwitcherProps) => {
   const { t } = useTranslation('settings');
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
   const isAppRedesigned = getFeatureFlag('isAppRedesigned');
   const dispatch = useAppDispatch();
   const authData = useSelector(getUserAuthData);
@@ -70,7 +69,6 @@ export const UiDesignSwitcher = memo(({ className }: UiDesignSwitcherProps) => {
           className={className}
         />
       )}
-      {error && <Text text={error} variant='error' />}{' '}
     </HStack>
   );
 });
