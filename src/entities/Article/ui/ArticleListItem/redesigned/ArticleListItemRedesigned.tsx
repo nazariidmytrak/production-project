@@ -103,7 +103,7 @@ export const ArticleListItemRedesigned = memo(
         to={getRouteArticleDetails(article.id)}
         className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
       >
-        <Card className={cls.card} border='round'>
+        <Card className={cls.card} border='round' padding='0'>
           <AppImage
             fallback={<Skeleton width={200} height={200} />}
             alt={article.title}
