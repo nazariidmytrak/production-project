@@ -53,7 +53,6 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
   }, [dispatch, id]);
  */
   let content;
-
   if (isLoading) {
     content = <ArticleDetailsSkeleton />;
   } else if (error) {
