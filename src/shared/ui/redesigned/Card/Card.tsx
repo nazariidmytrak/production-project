@@ -5,7 +5,7 @@ import cls from './Card.module.scss';
 
 export type CardVariant = 'normal' | 'outlined' | 'light';
 export type CardPadding = '0' | '8' | '16' | '24';
-export type CardBorder = 'round' | 'normal';
+export type CardBorder = 'round' | 'normal' | 'semi-round';
 
 const mapPaddingToClass: Record<CardPadding, string> = {
   '0': 'gap_0',

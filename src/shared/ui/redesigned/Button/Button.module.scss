@@ -49,15 +49,33 @@
   &.outline {
     background: none;
     border-radius: 34px;
-    border: 2px solid var(--icon-redesigned);
 
-    &:hover {
-      border: 2px solid var(--accent-redesigned);
+    &.normal {
+      border: 2px solid var(--icon-redesigned);
+
+      &:hover {
+        border: 2px solid var(--accent-redesigned);
+      }
+    }
+
+    &.error {
+      border: 2px solid var(--cancel-redesigned);
+
+      &:hover {
+        color: var(--cancel-redesigned);
+      }
+    }
+
+    &.success {
+      border: 2px solid var(--save-redesigned);
+      
+      &:hover {
+        color: var(--save-redesigned);
+      }
     }
   }
 
-  /* Square button sizes */
-
+  // Square button sizes
   &.square {
     &.m {
       width: var(--font-line-m);
@@ -75,8 +93,7 @@
     }
   }
 
-  /* Font sizes */
-
+  // Font sizes
   &.m {
     font: var(--font-m-redesigned);
   }

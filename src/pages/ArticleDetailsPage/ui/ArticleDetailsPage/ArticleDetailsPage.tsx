@@ -43,7 +43,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
   }
 
   return (
-    <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
+    <DynamicModuleLoader reducers={reducers}>
       <ToggleFeatures
         feature='isAppRedesigned'
         on={
