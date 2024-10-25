@@ -32,7 +32,7 @@ Normal.args = {
       user: {
         id: '1',
         username: 'John',
-        avatar: 'https://eu.ui-avatars.com/api/?name=John+Doe&size=250',
+        avatar: 'https://i.pravatar.cc/150?img=6',
       },
     },
   ],
