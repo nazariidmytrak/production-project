@@ -1,6 +1,5 @@
-import { Suspense, useEffect } from 'react';
+import { memo, Suspense, useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { useTranslation } from 'react-i18next';
 
 import { Sidebar } from '@/widgets/Sidebar';
 import { Navbar } from '@/widgets/Navbar';
@@ -14,9 +13,9 @@ import { MainLayout } from '@/shared/layouts/MainLayout';
 import { AppLoaderLayout } from '@/shared/layouts/AppLoaderLayout';
 import { AppRouter } from './providers/router';
 import { useAppToolbar } from './lib/useAppToolbar';
+import { withTheme } from './providers/ThemeProvider/ui/withTheme';
 
-const App = () => {
-  const { t } = useTranslation('');
+const App = memo(() => {
   const { theme } = useTheme();
   const dispatch = useAppDispatch();
   const inited = useSelector(getUserInited);
@@ -68,6 +67,6 @@ const App = () => {
       }
     />
   );
-};
+});
 
-export default App;
+export default withTheme(App);
