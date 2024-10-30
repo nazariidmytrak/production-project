@@ -61,21 +61,21 @@ export function ListBox<T extends string>({
       >
         {({ open }) => (
           <>
-            <HListBox.Button disabled={readonly} className={popupCls.trigger}>
-              <Button
-                variant='filled'
-                disabled={readonly}
-                addonRight={
-                  <Icon
-                    Svg={ArrowIcon}
-                    className={classNames(cls.arrowIcon, {
-                      [cls.rotate]: open,
-                    })}
-                  />
-                }
-              >
-                {selectedItem?.content ?? defaultValue}
-              </Button>
+            <HListBox.Button
+              as={Button}
+              variant='filled'
+              addonRight={
+                <Icon
+                  Svg={ArrowIcon}
+                  className={classNames(cls.arrowIcon, {
+                    [cls.rotate]: open,
+                  })}
+                />
+              }
+              disabled={readonly}
+              className={popupCls.trigger}
+            >
+              {selectedItem?.content ?? defaultValue}
             </HListBox.Button>
             <HListBox.Options
               className={classNames(cls.options, {}, optionsClasses)}
