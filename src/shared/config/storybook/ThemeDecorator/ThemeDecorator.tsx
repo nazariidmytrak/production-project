@@ -1,15 +1,14 @@
-import { Story } from '@storybook/react';
+import { Decorator } from '@storybook/react';
 // eslint-disable-next-line
 import { ThemeProvider } from '@/app/providers/ThemeProvider';
 import { Theme } from '@/shared/const/theme';
 
-export const ThemeDecorator = (theme: Theme) => (StoryComponent: Story) => (
-  <ThemeProvider initialTheme={theme}>
-    <div
-      className={`app ${theme}`}
-      style={{ padding: theme === Theme.DARK ? '0' : '20px' }}
-    >
-      <StoryComponent />
-    </div>
-  </ThemeProvider>
-);
+export const ThemeDecorator =
+  (theme: Theme): Decorator =>
+  (Story) => (
+    <ThemeProvider initialTheme={theme}>
+      <div className={`app_redesigned ${theme}`}>
+        <Story />
+      </div>
+    </ThemeProvider>
+  );

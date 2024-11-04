@@ -4,16 +4,21 @@ import { buildCssLoader } from '../build/loaders/buildCssLoader';
 
 export default {
   stories: ['../../src/**/*.stories.@(js|jsx|ts|tsx)'],
+
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
     'storybook-addon-mock',
+    '@storybook/addon-webpack5-compiler-babel',
+    '@chromatic-com/storybook'
   ],
-  framework: '@storybook/react',
-  core: {
-    builder: 'webpack5',
+
+  framework: {
+    name: '@storybook/react-webpack5',
+    options: {}
   },
+
   webpackFinal: async (config: Configuration) => {
     const paths = {
       build: '',
@@ -55,4 +60,10 @@ export default {
 
     return config;
   },
+
+  docs: {},
+
+  typescript: {
+    reactDocgen: 'react-docgen-typescript'
+  }
 };
