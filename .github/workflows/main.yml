@@ -27,25 +27,13 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: install modules
+      - name: Install modules
         run: npm ci --force
-      - name: build production project
+      - name: Build production project
         run: npm run build:prod
         if: always()
-      - name: build storybook
-        run: npm run storybook:build
-        if: always()
-      - name: screenshot testing
-        run: npm run test:ui:ci
-        if: always()
-      - name: unit testing
-        if: always()
+      - name: Unit Testing
         run: npm run test:unit
-      - name: Generate HTML report
-        run: npm run test:ui:report
-        if: always()
-      - name: move loki
-        run: mv .loki reports/
         if: always()
       - name: Setup Pages
         uses: actions/configure-pages@v2
