@@ -1,6 +1,5 @@
 // eslint-disable-next-line
 import '@/app/styles/index.scss';
-import { Story } from '@storybook/react';
+import { Decorator } from '@storybook/react';
 
-export const StyleDecorator = (story: () => Story) => story();
-/* export const StyleDecorator = (StoryComponent: Story) => StoryComponent; */
+export const StyleDecorator: Decorator = (Story) => <Story />;
