@@ -1,13 +1,15 @@
 .primary {
   color: var(--text-redesigned);
+  transition: all 0.2s;
 
   &:hover {
     color: var(--accent-redesigned);
   }
 }
 
-.red {
+.error {
   color: var(--cancel-redesigned);
+  transition: all 0.2s;
 
   &:hover {
     opacity: 0.8;
