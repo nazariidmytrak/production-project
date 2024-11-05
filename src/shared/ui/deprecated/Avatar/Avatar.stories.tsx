@@ -1,26 +1,23 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
-import AvatarImg from '@/shared/assets/tests/storybook.png';
 import { Avatar } from './Avatar';
+import AvatarImg from '@/shared/assets/tests/storybook.png';
 
-export default {
-  title: 'shared/Avatar',
+const meta: Meta<typeof Avatar> = {
+  title: 'shared/deprecated/Avatar',
   component: Avatar,
-  argTypes: {
-    backgroundColor: { control: 'color' },
-  },
-} as ComponentMeta<typeof Avatar>;
-
-const Template: ComponentStory<typeof Avatar> = (args) => <Avatar {...args} />;
-
-export const Primary = Template.bind({});
-Primary.args = {
-  size: 150,
-  src: AvatarImg,
+  args: { src: AvatarImg, alt: 'Avatar image' },
 };
 
-export const Small = Template.bind({});
-Small.args = {
-  size: 50,
-  src: AvatarImg,
+export default meta;
+type Story = StoryObj<typeof Avatar>;
+
+export const Primary: Story = {};
+
+export const Small: Story = {
+  args: { size: 50 },
+};
+
+export const Big: Story = {
+  args: { size: 150 },
 };

@@ -1,86 +1,90 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { Theme } from '@/shared/const/theme';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Text, TextSize, TextTheme } from './Text';
 
-export default {
-  title: 'shared/Text',
+const meta: Meta<typeof Text> = {
   component: Text,
-  argTypes: {
-    backgroundColor: { control: 'color' },
+  title: 'shared/deprecated/Text',
+};
+
+export default meta;
+type Story = StoryObj<typeof Text>;
+
+const baseArgs = {
+  title: 'Title lorem ipsum',
+  text: 'Text lorem ipsum',
+};
+
+export const Primary: Story = {
+  args: baseArgs,
+};
+
+export const Dark: Story = {
+  args: baseArgs,
+  decorators: [ThemeDecorator(Theme.DARK)],
+};
+
+export const Orange: Story = {
+  args: baseArgs,
+  decorators: [ThemeDecorator(Theme.ORANGE)],
+};
+
+export const onlyTitle: Story = {
+  args: {
+    title: 'Title lorem ipsum',
   },
-} as ComponentMeta<typeof Text>;
-
-const Template: ComponentStory<typeof Text> = (args) => <Text {...args} />;
-
-export const Primary = Template.bind({});
-Primary.args = {
-  title: 'Title lorem ipsum',
-  text: 'Text lorem ipsum',
 };
 
-export const onlyTitle = Template.bind({});
-onlyTitle.args = {
-  title: 'Title lorem ipsum',
+export const onlyText: Story = {
+  args: {
+    text: 'Text lorem ipsum',
+  },
 };
 
-export const onlyText = Template.bind({});
-onlyText.args = {
-  text: 'Text lorem ipsum',
+// Error
+export const Error: Story = {
+  args: {
+    ...baseArgs,
+    theme: TextTheme.ERROR,
+  },
 };
 
-export const Error = Template.bind({});
-Error.args = {
-  title: 'Title lorem ipsum',
-  text: 'Text lorem ipsum',
-  theme: TextTheme.ERROR,
+export const ErrorDark: Story = {
+  args: {
+    ...baseArgs,
+    theme: TextTheme.ERROR,
+  },
+  decorators: [ThemeDecorator(Theme.DARK)],
 };
 
-export const ErrorDark = Template.bind({});
-ErrorDark.args = {
-  title: 'Title lorem ipsum',
-  text: 'Text lorem ipsum',
-  theme: TextTheme.ERROR,
-};
-ErrorDark.decorators = [ThemeDecorator(Theme.DARK)];
-
-export const PrimaryDark = Template.bind({});
-PrimaryDark.args = {
-  title: 'Title lorem ipsum',
-  text: 'Text lorem ipsum',
-};
-PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
-
-export const onlyTitleDark = Template.bind({});
-onlyTitleDark.args = {
-  title: 'Title lorem ipsum',
-};
-onlyTitleDark.decorators = [ThemeDecorator(Theme.DARK)];
-
-export const onlyTextDark = Template.bind({});
-onlyTextDark.args = {
-  text: 'Text lorem ipsum',
-};
-onlyTextDark.decorators = [ThemeDecorator(Theme.DARK)];
-
-export const SizeS = Template.bind({});
-SizeS.args = {
-  title: 'Title lorem ipsum',
-  text: 'Text lorem ipsum',
-  size: TextSize.S,
+export const ErrorOrange: Story = {
+  args: {
+    ...baseArgs,
+    theme: TextTheme.ERROR,
+  },
+  decorators: [ThemeDecorator(Theme.ORANGE)],
 };
 
-export const SizeM = Template.bind({});
-SizeM.args = {
-  title: 'Title lorem ipsum',
-  text: 'Text lorem ipsum',
-  size: TextSize.M,
+// Size
+export const SizeS: Story = {
+  args: {
+    ...baseArgs,
+    size: TextSize.S,
+  },
 };
 
-export const SizeL = Template.bind({});
-SizeL.args = {
-  title: 'Title lorem ipsum',
-  text: 'Text lorem ipsum',
-  size: TextSize.L,
+export const SizeM: Story = {
+  args: {
+    ...baseArgs,
+    size: TextSize.M,
+  },
+};
+
+export const SizeL: Story = {
+  args: {
+    ...baseArgs,
+    size: TextSize.L,
+  },
 };
