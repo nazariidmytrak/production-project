@@ -1,85 +1,94 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
+import { FlexDecorator } from '@/shared/config/storybook/FlexDecorator/FlexDecorator';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/shared/const/theme';
 import { Button, ButtonSize, ButtonTheme } from './Button';
 
-export default {
-  title: 'shared/Button',
+const meta: Meta<typeof Button> = {
+  title: 'shared/deprecated/Button',
   component: Button,
-  argTypes: {
-    backgroundColor: { control: 'color' },
+};
+
+export default meta;
+type Story = StoryObj<typeof Button>;
+
+const renderButtonVariants = () => (
+  <>
+    <Button theme={ButtonTheme.CLEAR}>Clear</Button>
+    <Button theme={ButtonTheme.CLEAR_INVERTED}>Clear Inverted</Button>
+    <Button theme={ButtonTheme.OUTLINE}>Outline</Button>
+    <Button theme={ButtonTheme.OUTLINE_RED}>Outline Red</Button>
+    <Button theme={ButtonTheme.BACKGROUND}>Background</Button>
+    <Button theme={ButtonTheme.BACKGROUND_INVERTED}>Background Inverted</Button>
+    <Button disabled>Disabled</Button>
+  </>
+);
+
+export const Variants: Story = {
+  render: renderButtonVariants,
+  decorators: [FlexDecorator],
+  parameters: {
+    docs: {
+      description: {
+        story: 'Shows button variants styled for the light theme.',
+      },
+    },
   },
-  args: {
-    children: 'TEXT',
+};
+
+export const DarkVariants: Story = {
+  render: renderButtonVariants,
+  decorators: [FlexDecorator, ThemeDecorator(Theme.DARK)],
+  parameters: {
+    docs: {
+      description: {
+        story: 'Shows button variants styled for the dark theme.',
+      },
+    },
   },
-} as ComponentMeta<typeof Button>;
-
-const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
-
-export const Primary = Template.bind({});
-Primary.args = {};
-
-export const Clear = Template.bind({});
-Clear.args = {
-  theme: ButtonTheme.CLEAR,
 };
 
-export const ClearInverted = Template.bind({});
-ClearInverted.args = {
-  theme: ButtonTheme.CLEAR_INVERTED,
+export const OrangeVariants: Story = {
+  render: renderButtonVariants,
+  decorators: [FlexDecorator, ThemeDecorator(Theme.ORANGE)],
+  parameters: {
+    docs: {
+      description: {
+        story: 'Shows button variants styled for the orange theme.',
+      },
+    },
+  },
 };
 
-export const Outline = Template.bind({});
-Outline.args = {
-  theme: ButtonTheme.OUTLINE,
+export const Sizes: Story = {
+  render: () => (
+    <>
+      <Button size={ButtonSize.M}>Size M</Button>
+      <Button size={ButtonSize.L}>Size L</Button>
+      <Button size={ButtonSize.XL}>Size XL</Button>
+    </>
+  ),
+  decorators: [FlexDecorator],
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'Shows button size options: Medium (M), Large (L), and Extra Large (XL).',
+      },
+    },
+  },
 };
 
-export const OutlineSizeL = Template.bind({});
-OutlineSizeL.args = {
-  theme: ButtonTheme.OUTLINE,
-  size: ButtonSize.L,
-};
-
-export const OutlineSizeXL = Template.bind({});
-OutlineSizeXL.args = {
-  theme: ButtonTheme.OUTLINE,
-  size: ButtonSize.XL,
-};
-
-export const BackgroundTheme = Template.bind({});
-BackgroundTheme.args = {
-  theme: ButtonTheme.BACKGROUND,
-};
-
-export const BackgroundInverted = Template.bind({});
-BackgroundInverted.args = {
-  theme: ButtonTheme.BACKGROUND_INVERTED,
-};
-
-export const Square = Template.bind({});
-Square.args = {
-  children: '>',
-  square: true,
-  theme: ButtonTheme.BACKGROUND_INVERTED,
-};
-
-export const SquareSizeL = Template.bind({});
-SquareSizeL.args = {
-  children: '>',
-  square: true,
-  theme: ButtonTheme.BACKGROUND_INVERTED,
-  size: ButtonSize.L,
-};
-
-export const SquareSizeXL = Template.bind({});
-SquareSizeXL.args = {
-  children: '>',
-  square: true,
-  theme: ButtonTheme.BACKGROUND_INVERTED,
-  size: ButtonSize.XL,
-};
-
-export const Disabled = Template.bind({});
-Disabled.args = {
-  disabled: true,
-  theme: ButtonTheme.OUTLINE,
+export const FullWidth: Story = {
+  args: { fullWidth: true, children: 'Full Width' },
+  decorators: [FlexDecorator],
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'Shows a button with full-width styling, stretching across the container.',
+      },
+    },
+  },
 };

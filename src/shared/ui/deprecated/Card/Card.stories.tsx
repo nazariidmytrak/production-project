@@ -1,27 +1,39 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { Theme } from '@/shared/const/theme';
-import { Text } from '../Text';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Card } from './Card';
+import { Text } from '../Text';
+import { Card, CardTheme } from './Card';
 
-export default {
-  title: 'shared/Card',
+const meta: Meta<typeof Card> = {
+  title: 'shared/deprecated/Card',
   component: Card,
-  argTypes: {
-    backgroundColor: { control: 'color' },
-  },
-} as ComponentMeta<typeof Card>;
-
-const Template: ComponentStory<typeof Card> = (args) => <Card {...args} />;
-
-export const Primary = Template.bind({});
-Primary.args = {
-  children: <Text title='test' text='text text' />,
+  args: { children: <Text title='Title' text='Text' /> },
 };
 
-export const Dark = Template.bind({});
-Dark.args = {
-  children: <Text title='test' text='text text' />,
+export default meta;
+type Story = StoryObj<typeof Card>;
+
+export const Primary: Story = {};
+
+export const Dark: Story = {
+  decorators: [ThemeDecorator(Theme.DARK)],
 };
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const Orange: Story = {
+  decorators: [ThemeDecorator(Theme.ORANGE)],
+};
+
+export const Outlined: Story = {
+  args: { theme: CardTheme.OUTLINED },
+};
+
+export const DarkOutlined: Story = {
+  args: { theme: CardTheme.OUTLINED },
+  decorators: [ThemeDecorator(Theme.DARK)],
+};
+
+export const OrangeOutlined: Story = {
+  args: { theme: CardTheme.OUTLINED },
+  decorators: [ThemeDecorator(Theme.ORANGE)],
+};
