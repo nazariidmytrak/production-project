@@ -1,9 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/shared/const/theme';
-import { Text } from '../../redesigned/Text';
 import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
+import { FlexDecorator } from '@/shared/config/storybook/FlexDecorator/FlexDecorator';
+import { Theme } from '@/shared/const/theme';
+import { Text } from './Text';
 
 const meta: Meta<typeof Text> = {
   component: Text,
@@ -14,79 +15,70 @@ const meta: Meta<typeof Text> = {
 export default meta;
 type Story = StoryObj<typeof Text>;
 
-const baseArgs = {
-  title: 'Title lorem ipsum',
-  text: 'Text lorem ipsum',
-};
+const renderTextVariants = () => (
+  <>
+    <Text title='Primary title' text='Primary text' />
+    <Text title='Error title' text='Error text' variant='error' />
+    <Text title='Accent title' text='Accent text' variant='accent' />
+    <Text title='Only title' />
+    <Text text='Only text' />
+  </>
+);
 
-export const Primary: Story = {
-  args: baseArgs,
-};
-
-export const Dark: Story = {
-  args: baseArgs,
-  decorators: [NewDesignDecorator, ThemeDecorator(Theme.DARK)],
-};
-
-export const Orange: Story = {
-  args: baseArgs,
-  decorators: [NewDesignDecorator, ThemeDecorator(Theme.ORANGE)],
-};
-
-export const onlyTitle: Story = {
-  args: {
-    title: 'Title lorem ipsum',
+export const Variants: Story = {
+  render: renderTextVariants,
+  decorators: [FlexDecorator],
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'Shows primary, error, accent, and text-only variants.',
+      },
+    },
   },
 };
 
-export const onlyText: Story = {
-  args: {
-    text: 'Text lorem ipsum',
+export const DarkVariants: Story = {
+  render: renderTextVariants,
+  decorators: [FlexDecorator, NewDesignDecorator, ThemeDecorator(Theme.DARK)],
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'Shows text variants with dark theme applied.',
+      },
+    },
   },
 };
 
-// Error
-export const Error: Story = {
-  args: {
-    ...baseArgs,
-    variant: 'error',
+export const OrangeVariants: Story = {
+  render: renderTextVariants,
+  decorators: [FlexDecorator, NewDesignDecorator, ThemeDecorator(Theme.ORANGE)],
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'Shows text variants with orange theme applied.',
+      },
+    },
   },
 };
 
-export const ErrorDark: Story = {
-  args: {
-    ...baseArgs,
-    variant: 'error',
-  },
-  decorators: [NewDesignDecorator, ThemeDecorator(Theme.DARK)],
-};
-
-export const ErrorOrange: Story = {
-  args: {
-    ...baseArgs,
-    variant: 'error',
-  },
-  decorators: [NewDesignDecorator, ThemeDecorator(Theme.ORANGE)],
-};
-
-// Size
-export const SizeS: Story = {
-  args: {
-    ...baseArgs,
-    size: 's',
-  },
-};
-
-export const SizeM: Story = {
-  args: {
-    ...baseArgs,
-    size: 'm',
-  },
-};
-
-export const SizeL: Story = {
-  args: {
-    ...baseArgs,
-    size: 'l',
+export const Sizes: Story = {
+  render: () => (
+    <>
+      <Text size='s' title='Size: S' text='Size: S' />
+      <Text size='m' title='Size: M' text='Size: M' />
+      <Text size='l' title='Size: L' text='Size: L' />
+    </>
+  ),
+  decorators: [FlexDecorator],
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'Shows small, medium, and large text sizes.',
+      },
+    },
   },
 };

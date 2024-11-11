@@ -46,7 +46,7 @@ export const Orange: Story = {
   parameters: {
     docs: {
       description: {
-        story: 'Shows the Drawer component with a orange theme applied.',
+        story: 'Shows the Drawer component with an orange theme applied.',
       },
     },
   },
