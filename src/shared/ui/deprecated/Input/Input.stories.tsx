@@ -1,28 +1,57 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { Theme } from '@/shared/const/theme';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Input } from './Input';
+import { FlexDecorator } from '@/shared/config/storybook/FlexDecorator/FlexDecorator';
 
-export default {
-  title: 'shared/Input',
+const meta: Meta<typeof Input> = {
+  title: 'shared/deprecated/Input',
   component: Input,
-  argTypes: {
-    backgroundColor: { control: 'color' },
+};
+
+export default meta;
+type Story = StoryObj<typeof Input>;
+
+const renderInputVariants = () => (
+  <>
+    <Input placeholder='Primary' />
+    <Input readonly placeholder='Readonly' />
+  </>
+);
+
+export const Variants: Story = {
+  render: renderInputVariants,
+  decorators: [FlexDecorator],
+  parameters: {
+    docs: {
+      description: {
+        story: 'Shows basic input styles: Primary and Readonly.',
+      },
+    },
   },
-} as ComponentMeta<typeof Input>;
-
-const Template: ComponentStory<typeof Input> = (args) => <Input {...args} />;
-
-export const Primary = Template.bind({});
-Primary.args = {
-  value: '123123',
-  placeholder: 'Type text',
 };
 
-export const Dark = Template.bind({});
-Dark.args = {
-  value: '123123',
-  placeholder: 'Type text',
+export const DarkVariants: Story = {
+  render: renderInputVariants,
+  decorators: [FlexDecorator, ThemeDecorator(Theme.DARK)],
+  parameters: {
+    docs: {
+      description: {
+        story: 'Shows Primary and Readonly inputs in dark mode.',
+      },
+    },
+  },
 };
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const OrangeVariants: Story = {
+  render: renderInputVariants,
+  decorators: [FlexDecorator, ThemeDecorator(Theme.ORANGE)],
+  parameters: {
+    docs: {
+      description: {
+        story: 'Shows Primary and Readonly inputs in an orange theme.',
+      },
+    },
+  },
+};

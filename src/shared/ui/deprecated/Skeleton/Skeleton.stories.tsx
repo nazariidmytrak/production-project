@@ -1,45 +1,58 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
-import { Theme } from '@/shared/const/theme';
+import { FlexDecorator } from '@/shared/config/storybook/FlexDecorator/FlexDecorator';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/shared/const/theme';
 import { Skeleton } from './Skeleton';
 
-export default {
-  title: 'shared/Skeleton',
+const meta: Meta<typeof Skeleton> = {
+  title: 'shared/deprecated/Skeleton',
   component: Skeleton,
-  argTypes: {
-    backgroundColor: { control: 'color' },
-  },
-} as ComponentMeta<typeof Skeleton>;
+};
 
-const Template: ComponentStory<typeof Skeleton> = (args) => (
-  <Skeleton {...args} />
+export default meta;
+type Story = StoryObj<typeof Skeleton>;
+
+const renderSkeletonVariants = () => (
+  <>
+    <Skeleton width={200} height={200} />
+    <Skeleton width={200} height={200} border='25%' />
+    <Skeleton width={200} height={200} border='50%' />
+  </>
 );
 
-export const Primary = Template.bind({});
-Primary.args = {
-  width: '100%',
-  height: 200,
+export const Variants: Story = {
+  render: renderSkeletonVariants,
+  decorators: [FlexDecorator],
+  parameters: {
+    docs: {
+      description: {
+        story: 'Shows the primary state of the Skeleton component.',
+      },
+    },
+  },
 };
 
-export const PrimaryDark = Template.bind({});
-PrimaryDark.args = {
-  width: '100%',
-  height: 200,
-};
-PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
-
-export const Circle = Template.bind({});
-Circle.args = {
-  width: 100,
-  height: 100,
-  border: '50%',
+export const DarkVariants: Story = {
+  render: renderSkeletonVariants,
+  decorators: [FlexDecorator, ThemeDecorator(Theme.DARK)],
+  parameters: {
+    docs: {
+      description: {
+        story: 'Shows the Skeleton component with a dark theme applied.',
+      },
+    },
+  },
 };
 
-export const CircleDark = Template.bind({});
-CircleDark.args = {
-  width: 100,
-  height: 100,
-  border: '50%',
+export const OrangeVariants: Story = {
+  render: renderSkeletonVariants,
+  decorators: [FlexDecorator, ThemeDecorator(Theme.ORANGE)],
+  parameters: {
+    docs: {
+      description: {
+        story: 'Shows the Skeleton component with an orange theme applied.',
+      },
+    },
+  },
 };
-CircleDark.decorators = [ThemeDecorator(Theme.DARK)];
