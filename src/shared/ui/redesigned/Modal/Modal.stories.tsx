@@ -1,28 +1,80 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
-import { Theme } from '@/shared/const/theme';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Modal } from '.';
+import { Theme } from '@/shared/const/theme';
+import { Modal } from './Modal';
 
-export default {
+const meta: Meta<typeof Modal> = {
   title: 'shared/Modal',
   component: Modal,
-  argTypes: {
-    backgroundColor: { control: 'color' },
+  args: { isOpen: true, children: 'This is the modal content' },
+};
+
+export default meta;
+type Story = StoryObj<typeof Modal>;
+
+export const Primary: Story = {
+  decorators: [NewDesignDecorator],
+  parameters: {
+    docs: {
+      description: {
+        story: 'Shows the primary state of the Modal component with content visible.',
+      },
+    },
   },
-} as ComponentMeta<typeof Modal>;
-
-const Template: ComponentStory<typeof Modal> = (args) => <Modal {...args} />;
-
-export const Primary = Template.bind({});
-Primary.args = {
-  isOpen: true,
-  children: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
 };
 
-export const Dark = Template.bind({});
-Dark.args = {
-  isOpen: true,
-  children: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+export const Dark: Story = {
+  decorators: [NewDesignDecorator, ThemeDecorator(Theme.DARK)],
+  parameters: {
+    docs: {
+      description: {
+        story: 'Shows the Modal component with a dark theme applied.',
+      },
+    },
+  },
 };
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const Orange: Story = {
+  decorators: [NewDesignDecorator, ThemeDecorator(Theme.ORANGE)],
+  parameters: {
+    docs: {
+      description: {
+        story: 'Shows the Modal component with an orange theme applied.',
+      },
+    },
+  },
+};
+
+export const PrimaryDeprecated: Story = {
+  parameters: {
+    docs: {
+      description: {
+        story: 'Shows the primary state of the deprecated Modal component with content visible.',
+      },
+    },
+  },
+};
+
+export const DarkDeprecated: Story = {
+  decorators: [ThemeDecorator(Theme.DARK)],
+  parameters: {
+    docs: {
+      description: {
+        story: 'Shows the deprecated Modal component with a dark theme applied.',
+      },
+    },
+  },
+};
+
+export const OrangeDeprecated: Story = {
+  decorators: [ThemeDecorator(Theme.ORANGE)],
+  parameters: {
+    docs: {
+      description: {
+        story: 'Shows the deprecated Modal component with an orange theme applied.',
+      },
+    },
+  },
+};
