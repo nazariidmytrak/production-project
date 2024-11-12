@@ -10,7 +10,7 @@ export interface TabItem {
   content: ReactNode;
 }
 
-interface TabsProps {
+export interface TabsProps {
   className?: string;
   tabs: TabItem[];
   value: string;
