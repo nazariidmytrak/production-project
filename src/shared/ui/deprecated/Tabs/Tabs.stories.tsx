@@ -1,34 +1,73 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-
+import { useState } from 'react';
+import { Meta, StoryObj } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { Tabs } from './Tabs';
 
-export default {
-  title: 'shared/Tabs',
+import { FlexDecorator } from '@/shared/config/storybook/FlexDecorator/FlexDecorator';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/shared/const/theme';
+import { Tabs, TabItem, TabsProps } from './Tabs';
+
+const meta: Meta<typeof Tabs> = {
+  title: 'shared/deprecated/Tabs',
   component: Tabs,
-  argTypes: {
-    backgroundColor: { control: 'color' },
+  args: {
+    tabs: [
+      { value: 'tab 1', content: 'Tab 1 content' },
+      { value: 'tab 2', content: 'Tab 2 content' },
+      { value: 'tab 3', content: 'Tab 3 content' },
+    ],
+    value: 'tab 1',
+    onTabClick: action('Tab clicked'),
   },
-} as ComponentMeta<typeof Tabs>;
+};
 
-const Template: ComponentStory<typeof Tabs> = (args) => <Tabs {...args} />;
+export default meta;
+type Story = StoryObj<typeof Tabs>;
 
-export const Primary = Template.bind({});
-Primary.args = {
-  tabs: [
-    {
-      value: 'tab 1',
-      content: 'tab 1',
+const InteractiveTabsStory = (args: TabsProps) => {
+  const { value, onTabClick } = args;
+  const [selectedTab, setSelectedTab] = useState(value);
+
+  const handleTabClick = (tab: TabItem) => {
+    setSelectedTab(tab.value);
+    onTabClick(tab);
+  };
+
+  return <Tabs {...args} value={selectedTab} onTabClick={handleTabClick} />;
+};
+
+export const Primary: Story = {
+  render: (args) => <InteractiveTabsStory {...args} />,
+  decorators: [FlexDecorator],
+  parameters: {
+    docs: {
+      description: {
+        story: 'Shows the primary state of the Tabs component.',
+      },
     },
-    {
-      value: 'tab 2',
-      content: 'tab 2',
+  },
+};
+
+export const Dark: Story = {
+  render: (args) => <InteractiveTabsStory {...args} />,
+  decorators: [FlexDecorator, ThemeDecorator(Theme.DARK)],
+  parameters: {
+    docs: {
+      description: {
+        story: 'Shows the dark theme state of the Tabs component.',
+      },
     },
-    {
-      value: 'tab 3',
-      content: 'tab 3',
+  },
+};
+
+export const Orange: Story = {
+  render: (args) => <InteractiveTabsStory {...args} />,
+  decorators: [FlexDecorator, ThemeDecorator(Theme.ORANGE)],
+  parameters: {
+    docs: {
+      description: {
+        story: 'Shows the orange theme state of the Tabs component.',
+      },
     },
-  ],
-  value: 'tab 2',
-  onTabClick: action('onTabClick'),
+  },
 };

@@ -1,32 +1,57 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 
-import { Theme } from '@/shared/const/theme';
+import { FlexDecorator } from '@/shared/config/storybook/FlexDecorator/FlexDecorator';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Button } from '../../../Button';
+import { Theme } from '@/shared/const/theme';
 import { Popover } from './Popover';
+import { Button } from '../../../Button';
 
-export default {
-  title: 'shared/popups/Popover',
+const meta: Meta<typeof Popover> = {
+  title: 'shared/deprecated/popups/Popover',
   component: Popover,
-  argTypes: {
-    backgroundColor: { control: 'color' },
-  },
   args: {
-    trigger: <Button>Open</Button>,
-    children: 'Popover',
+    trigger: <Button>Popover Trigger</Button>,
+    children: (
+      <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero pariatur
+        non placeat assumenda rem magnam natus itaque nam ex eligendi?
+      </div>
+    ),
   },
-} as ComponentMeta<typeof Popover>;
-
-const Template: ComponentStory<typeof Popover> = (args) => (
-  <Popover {...args} />
-);
-
-export const Primary = Template.bind({});
-Primary.args = {
-  trigger: <Button>Open</Button>,
-  children: 'Popover',
 };
 
-export const Dark = Template.bind({});
-Dark.args = {};
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
+export default meta;
+type Story = StoryObj<typeof Popover>;
+
+export const Primary: Story = {
+  decorators: [FlexDecorator],
+  parameters: {
+    docs: {
+      description: {
+        story: 'Shows the primary state of the Popover component.',
+      },
+    },
+  },
+};
+
+export const Dark: Story = {
+  decorators: [FlexDecorator, ThemeDecorator(Theme.DARK)],
+  parameters: {
+    docs: {
+      description: {
+        story: 'Shows the Popover component in dark theme.',
+      },
+    },
+  },
+};
+
+export const Orange: Story = {
+  decorators: [FlexDecorator, ThemeDecorator(Theme.ORANGE)],
+  parameters: {
+    docs: {
+      description: {
+        story: 'Shows the Popover component in orange theme.',
+      },
+    },
+  },
+};

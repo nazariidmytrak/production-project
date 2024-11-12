@@ -1,22 +1,45 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
-import { Theme } from '@/shared/const/theme';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/shared/const/theme';
 import { Loader } from './Loader';
 
-export default {
-  title: 'shared/Loader',
+const meta: Meta<typeof Loader> = {
+  title: 'shared/deprecated/Loader',
   component: Loader,
-  argTypes: {
-    backgroundColor: { control: 'color' },
+};
+
+export default meta;
+type Story = StoryObj<typeof Loader>;
+
+export const Primary: Story = {
+  parameters: {
+    docs: {
+      description: {
+        story: 'Shows the primary state of the Loader component.',
+      },
+    },
   },
-} as ComponentMeta<typeof Loader>;
+};
 
-const Template: ComponentStory<typeof Loader> = (args) => <Loader {...args} />;
+export const Dark: Story = {
+  decorators: [ThemeDecorator(Theme.DARK)],
+  parameters: {
+    docs: {
+      description: {
+        story: 'Shows the Loader component with a dark theme applied.',
+      },
+    },
+  },
+};
 
-export const Normal = Template.bind({});
-Normal.args = {};
-
-export const Dark = Template.bind({});
-Dark.args = {};
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
+export const Orange: Story = {
+  decorators: [ThemeDecorator(Theme.ORANGE)],
+  parameters: {
+    docs: {
+      description: {
+        story: 'Shows the Loader component with an orange theme applied.',
+      },
+    },
+  },
+};
