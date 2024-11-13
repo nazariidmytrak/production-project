@@ -67,7 +67,7 @@ export const ArticleListItemSkeleton = memo(
         <Card className={cls.card}>
           <VStack gap='16'>
             <div className={cls.imageWrapper}>
-              <Skeleton width={200} height={200} className={cls.img} />
+              <Skeleton width={215} height={200} className={cls.img} />
             </div>
             <div className={cls.infoWrapper}>
               <Skeleton width={130} height={16} />

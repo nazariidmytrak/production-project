@@ -1,26 +1,9 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+// articleMockData.ts
 
-import { ArticleListItemDeprecated } from './deprecated/ArticleListItemDeprecated';
-import { Article } from '../../model/types/article';
-import {
-  ArticleBlockType,
-  ArticleType,
-  ArticleView,
-} from '../../model/constants/articleContants';
+import { ArticleType, ArticleBlockType } from '../constants/articleContants';
+import { Article } from '../types/article';
 
-export default {
-  title: 'entities/Article/ArticleListItem',
-  component: ArticleListItemDeprecated,
-  argTypes: {
-    backgroundColor: { control: 'color' },
-  },
-} as ComponentMeta<typeof ArticleListItemDeprecated>;
-
-const Template: ComponentStory<typeof ArticleListItemDeprecated> = (args) => (
-  <ArticleListItemDeprecated {...args} />
-);
-
-const article: Article = {
+export const articleMock: Article = {
   id: '1',
   user: {
     id: '1',
@@ -40,12 +23,14 @@ const article: Article = {
       title: 'The title of this block',
       paragraphs: [
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, incidunt.',
+        // eslint-disable-next-line max-len
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem ducimus beatae pariatur quibusdam soluta nisi mollitia nemo praesentium aspernatur dolorem.',
       ],
     },
     {
       id: '4',
       type: ArticleBlockType.CODE,
+      // eslint-disable-next-line max-len
       code: '<!DOCTYPE html>\n<html>\n  <body>\n    <p id="hello"></p>\n\n    <script>\n      document.getElementById("hello").innerHTML = "Hello, world!";\n    </script>\n  </body>\n</html>;',
     },
     {
@@ -54,20 +39,9 @@ const article: Article = {
       title: 'The title of this block',
       paragraphs: [
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, incidunt.',
+        // eslint-disable-next-line max-len
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem ducimus beatae pariatur quibusdam soluta nisi mollitia nemo praesentium aspernatur dolorem.',
       ],
     },
   ],
-};
-
-export const Big = Template.bind({});
-Big.args = {
-  view: ArticleView.BIG,
-  article,
-};
-
-export const Small = Template.bind({});
-Small.args = {
-  view: ArticleView.SMALL,
-  article,
 };
