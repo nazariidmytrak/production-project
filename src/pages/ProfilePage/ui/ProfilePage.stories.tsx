@@ -1,60 +1,67 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
-import { ProfilePage } from '..';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/shared/const/theme';
 import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
-import { Theme } from '@/shared/const/theme';
 import Avatar from '@/shared/assets/tests/storybook.png';
+import ProfilePage from './ProfilePage';
 
-export default {
+const meta: Meta<typeof ProfilePage> = {
   title: 'pages/ProfilePage',
   component: ProfilePage,
-  argTypes: {
-    backgroundColor: { control: 'color' },
+  decorators: [
+    StoreDecorator({
+      profile: {
+        form: {
+          firstname: 'FirstName',
+          lastname: 'LastName',
+          username: 'Username',
+          age: 24,
+          country: Country.UKRAINE,
+          city: 'City',
+          currency: Currency.USD,
+          avatar: Avatar,
+        },
+      },
+    }),
+  ],
+};
+
+export default meta;
+type Story = StoryObj<typeof ProfilePage>;
+
+export const Primary: Story = {
+  decorators: [NewDesignDecorator],
+  parameters: {
+    docs: {
+      description: {
+        story: 'Shows the primary state of the ProfilePage component.',
+      },
+    },
   },
-} as ComponentMeta<typeof ProfilePage>;
+};
 
-const Template: ComponentStory<typeof ProfilePage> = (args) => (
-  <ProfilePage {...args} />
-);
-
-export const Normal = Template.bind({});
-Normal.args = {};
-Normal.decorators = [
-  StoreDecorator({
-    profile: {
-      form: {
-        firstname: 'FirstName',
-        lastname: 'LastName',
-        username: 'Username',
-        age: 24,
-        country: Country.UKRAINE,
-        city: 'City',
-        currency: Currency.USD,
-        avatar: Avatar,
+export const Dark: Story = {
+  decorators: [NewDesignDecorator, ThemeDecorator(Theme.DARK)],
+  parameters: {
+    docs: {
+      description: {
+        story: 'Shows the ProfilePage in dark theme.',
       },
     },
-  }),
-];
+  },
+};
 
-export const Dark = Template.bind({});
-Dark.args = {};
-Dark.decorators = [
-  ThemeDecorator(Theme.DARK),
-  StoreDecorator({
-    profile: {
-      form: {
-        firstname: 'FirstName',
-        lastname: 'LastName',
-        username: 'Username',
-        age: 24,
-        country: Country.UKRAINE,
-        city: 'City',
-        currency: Currency.USD,
-        avatar: Avatar,
+export const Orange: Story = {
+  decorators: [NewDesignDecorator, ThemeDecorator(Theme.ORANGE)],
+  parameters: {
+    docs: {
+      description: {
+        story: 'Shows the ProfilePage in orange theme.',
       },
     },
-  }),
-];
+  },
+};

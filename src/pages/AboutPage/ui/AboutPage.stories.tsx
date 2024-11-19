@@ -1,24 +1,49 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
-import { Theme } from '@/shared/const/theme';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/shared/const/theme';
 import AboutPage from './AboutPage';
 
-export default {
+const meta: Meta<typeof AboutPage> = {
   title: 'pages/AboutPage',
   component: AboutPage,
-  argTypes: {
-    backgroundColor: { control: 'color' },
+  decorators: [StoreDecorator({})],
+};
+
+export default meta;
+type Story = StoryObj<typeof AboutPage>;
+
+export const Primary: Story = {
+  decorators: [NewDesignDecorator],
+  parameters: {
+    docs: {
+      description: {
+        story: 'Shows the primary state of the AboutPage component.',
+      },
+    },
   },
-} as ComponentMeta<typeof AboutPage>;
+};
 
-const Template: ComponentStory<typeof AboutPage> = () => <AboutPage />;
+export const Dark: Story = {
+  decorators: [NewDesignDecorator, ThemeDecorator(Theme.DARK)],
+  parameters: {
+    docs: {
+      description: {
+        story: 'Shows the AboutPage in dark theme.',
+      },
+    },
+  },
+};
 
-export const Primary = Template.bind({});
-Primary.args = {};
-Primary.decorators = [StoreDecorator({})];
-
-export const Dark = Template.bind({});
-Dark.args = {};
-Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})];
+export const Orange: Story = {
+  decorators: [NewDesignDecorator, ThemeDecorator(Theme.ORANGE)],
+  parameters: {
+    docs: {
+      description: {
+        story: 'Shows the AboutPage in orange theme.',
+      },
+    },
+  },
+};

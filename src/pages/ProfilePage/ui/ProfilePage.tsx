@@ -21,7 +21,7 @@ const ProfilePage = memo(({ className }: ProfilePageProps) => {
     return <Text text={t('Profile not found')} />;
   } */
 
-  if (!id) {
+  if (!id && __PROJECT__ !== 'storybook') {
     return (
       <Page className={classNames('', {}, [className])}>
         {t('Profile not found')}
@@ -33,7 +33,7 @@ const ProfilePage = memo(({ className }: ProfilePageProps) => {
     <Page data-testid='ProfilePage' className={classNames('', {}, [className])}>
       <VStack gap='16' max>
         <EditableProfileCard id={id} />
-        <ProfileRating profileId={id} />
+        <ProfileRating profileId={id || 'storybook-id'} />
       </VStack>
     </Page>
   );
