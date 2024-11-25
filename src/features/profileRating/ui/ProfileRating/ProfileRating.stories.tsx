@@ -1,60 +1,85 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/shared/const/theme';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 import ProfileRating from './ProfileRating';
 
-export default {
+const commonMockData = (response: object) => [
+  {
+    url: `${__API__}/profile-ratings?userId=1&profileId=1`,
+    method: 'GET',
+    status: 200,
+    response,
+  },
+];
+
+const meta: Meta<typeof ProfileRating> = {
   title: 'features/Profile/ProfileRating',
   component: ProfileRating,
-  argTypes: {
-    backgroundColor: { control: 'color' },
+  args: {
+    profileId: '1',
   },
-} as ComponentMeta<typeof ProfileRating>;
-
-const Template: ComponentStory<typeof ProfileRating> = (args) => (
-  <ProfileRating {...args} />
-);
-
-export const Primary = Template.bind({});
-Primary.args = { profileId: '1' };
-Primary.decorators = [
-  StoreDecorator({
-    profile: {
-      data: { id: '1' },
-    },
-  }),
-];
-Primary.parameters = {
-  mockData: [
-    {
-      url: `${__API__}/profile-ratings?userId=1&profileId=1`,
-      method: 'GET',
-      status: 200,
-      response: [
-        {
-          rate: 4,
+  decorators: [
+    StoreDecorator({
+      user: {
+        authData: {
+          id: '1',
         },
-      ],
-    },
+      },
+    }),
   ],
 };
 
-export const WithoutRate = Template.bind({});
-WithoutRate.args = { profileId: '1' };
-WithoutRate.decorators = [
-  StoreDecorator({
-    profile: {
-      data: { id: '1' },
+export default meta;
+type Story = StoryObj<typeof ProfileRating>;
+
+export const Primary: Story = {
+  decorators: [NewDesignDecorator],
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'Primary state of ProfileRating with a rating fetched from the server.',
+      },
     },
-  }),
-];
-WithoutRate.parameters = {
-  mockData: [
-    {
-      url: `${__API__}/profile-ratings?userId=1&profileId=1`,
-      method: 'GET',
-      status: 200,
-      response: [],
+    mockData: commonMockData([{ rate: 4 }]),
+  },
+};
+
+export const DarkTheme: Story = {
+  decorators: [NewDesignDecorator, ThemeDecorator(Theme.DARK)],
+  parameters: {
+    docs: {
+      description: {
+        story: 'Shows the ProfileRating in dark theme.',
+      },
     },
-  ],
+    mockData: commonMockData([{ rate: 4 }]),
+  },
+};
+
+export const OrangeTheme: Story = {
+  decorators: [NewDesignDecorator, ThemeDecorator(Theme.ORANGE)],
+  parameters: {
+    docs: {
+      description: {
+        story: 'Shows the ProfileRating in orange theme.',
+      },
+    },
+    mockData: commonMockData([{ rate: 4 }]),
+  },
+};
+
+export const WithoutRate: Story = {
+  decorators: [NewDesignDecorator],
+  parameters: {
+    docs: {
+      description: {
+        story: 'State of ProfileRating when no rating is available.',
+      },
+    },
+    mockData: commonMockData([]),
+  },
 };
