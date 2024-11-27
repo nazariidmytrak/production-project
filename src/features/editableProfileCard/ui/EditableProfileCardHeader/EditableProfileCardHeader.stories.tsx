@@ -1,20 +1,50 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 import { EditableProfileCardHeader } from './EditableProfileCardHeader';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/shared/const/theme';
 
-export default {
-  title: 'features/EditableProfileCard/EditableProfileCardHeader',
+const meta: Meta<typeof EditableProfileCardHeader> = {
+  title: 'features/Profile/EditableProfileCardHeader',
   component: EditableProfileCardHeader,
-  argTypes: {
-    backgroundColor: { control: 'color' },
+  decorators: [StoreDecorator({})],
+};
+
+export default meta;
+type Story = StoryObj<typeof EditableProfileCardHeader>;
+
+export const Primary: Story = {
+  decorators: [NewDesignDecorator],
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'Shows the primary state of the EditableProfileCardHeader component.',
+      },
+    },
   },
-} as ComponentMeta<typeof EditableProfileCardHeader>;
+};
 
-const Template: ComponentStory<typeof EditableProfileCardHeader> = (args) => (
-  <EditableProfileCardHeader {...args} />
-);
+export const Dark: Story = {
+  decorators: [NewDesignDecorator, ThemeDecorator(Theme.DARK)],
+  parameters: {
+    docs: {
+      description: {
+        story: 'Shows the EditableProfileCardHeader in dark theme.',
+      },
+    },
+  },
+};
 
-export const Primary = Template.bind({});
-Primary.args = {};
-Primary.decorators = [StoreDecorator({})];
+export const Orange: Story = {
+  decorators: [NewDesignDecorator, ThemeDecorator(Theme.ORANGE)],
+  parameters: {
+    docs: {
+      description: {
+        story: 'Shows the EditableProfileCardHeader in orange theme.',
+      },
+    },
+  },
+};
