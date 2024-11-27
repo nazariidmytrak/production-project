@@ -1,26 +1,36 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
-import { Theme } from '@/shared/const/theme';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { ThemeSwitcher } from './ThemeSwitcher';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
+import { ThemeSwitcher } from './ThemeSwitcher';
 
-export default {
-  title: 'features/ThemeSwitcher',
+const meta: Meta<typeof ThemeSwitcher> = {
+  title: 'features/Switchers/ThemeSwitcher',
   component: ThemeSwitcher,
-  argTypes: {
-    backgroundColor: { control: 'color' },
+  decorators: [StoreDecorator({})],
+};
+
+export default meta;
+type Story = StoryObj<typeof ThemeSwitcher>;
+
+export const Primary: Story = {
+  decorators: [NewDesignDecorator],
+  parameters: {
+    docs: {
+      description: {
+        story: 'Shows the primary state of the ThemeSwitcher component.',
+      },
+    },
   },
-} as ComponentMeta<typeof ThemeSwitcher>;
+};
 
-const Template: ComponentStory<typeof ThemeSwitcher> = (args) => (
-  <ThemeSwitcher {...args} />
-);
-
-export const Primary = Template.bind({});
-Primary.args = {};
-Primary.decorators = [StoreDecorator({})];
-
-export const Dark = Template.bind({});
-Dark.args = {};
-Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})];
+export const PrimaryDeprecated: Story = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'Shows the primary state of the deprecated ThemeSwitcher component.',
+      },
+    },
+  },
+};
